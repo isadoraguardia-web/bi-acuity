@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BI ReuniÃÂµes ÃÂ· Smiller</title>
+<title>BI Reuniões · Smiller</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -139,12 +139,12 @@
 
 <div class="header">
   <div>
-    <h1>BI ReuniÃÂµes ÃÂ· <span>Smiller</span></h1>
+    <h1>BI Reuniões · <span>Smiller</span></h1>
     <div class="updated" id="updated-at">Carregando...</div>
   </div>
   <div style="text-align:right">
     <div style="font-size:12px;color:rgba(255,255,255,.5)">Consultores</div>
-    <div style="font-size:14px;font-weight:600;margin-top:2px">Gustavo Bernardes ÃÂ· Laura Raposo</div>
+    <div style="font-size:14px;font-weight:600;margin-top:2px">Gustavo Bernardes · Laura Raposo</div>
   </div>
 </div>
 
@@ -162,48 +162,48 @@
   <div class="cards-4">
     <div class="card">
       <div class="label">Total realizado</div>
-      <div class="value" id="total-realized">Ã¢ÂÂ</div>
-      <div class="sub" id="attendance-pct">sessÃÂµes na semana</div>
+      <div class="value" id="total-realized">—</div>
+      <div class="sub" id="attendance-pct">sessões na semana</div>
     </div>
     <div class="card orange">
       <div class="label">Cancelamentos</div>
-      <div class="value" id="total-canceled">Ã¢ÂÂ</div>
+      <div class="value" id="total-canceled">—</div>
       <div class="sub" id="cancel-pct">cancelamentos</div>
     </div>
     <div class="card red">
-      <div class="label">NÃÂ£o comparecimentos</div>
-      <div class="value" id="total-noshow">Ã¢ÂÂ</div>
+      <div class="label">Não comparecimentos</div>
+      <div class="value" id="total-noshow">—</div>
       <div class="sub">no-shows registrados</div>
     </div>
     <div class="card green">
       <div class="label">Taxa de comparecimento</div>
-      <div class="value" id="attendance-rate">Ã¢ÂÂ</div>
+      <div class="value" id="attendance-rate">—</div>
       <div class="sub">geral da semana</div>
     </div>
   </div>
 
-  <div class="section-title">Por consultor ÃÂ· semana atual</div>
+  <div class="section-title">Por consultor · semana atual</div>
   <div class="persons">
     <div class="person-card" id="card-gustavo"></div>
     <div class="person-card" id="card-laura"></div>
   </div>
 
-  <div class="section-title">Status do tratamento ÃÂ· semana atual</div>
+  <div class="section-title">Status do tratamento · semana atual</div>
   <div class="chart-card">
-    <div class="chart-title">DistribuiÃÂ§ÃÂ£o por status</div>
-    <div class="chart-sub">Baseado nas informaÃÂ§ÃÂµes do Forms CX de cada sessÃÂ£o realizada</div>
+    <div class="chart-title">Distribuição por status</div>
+    <div class="chart-sub">Baseado nas informações do Forms CX de cada sessão realizada</div>
     <div class="status-grid" id="status-grid"></div>
   </div>
 
-  <div class="section-title">Detalhamento das sessÃÂµes ÃÂ· semana atual</div>
+  <div class="section-title">Detalhamento das sessões · semana atual</div>
   <div class="charts-payload">
     <div class="chart-card">
       <div class="chart-title">Complexidade do caso</div>
-      <div class="chart-sub" id="sub-complexidade">sessÃÂµes realizadas</div>
+      <div class="chart-sub" id="sub-complexidade">sessões realizadas</div>
       <div class="bar-list" id="bars-complexidade"></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">MecÃÂ¢nica auxiliar</div>
+      <div class="chart-title">Mecânica auxiliar</div>
       <div class="chart-sub">Paciente usa aparelho auxiliar?</div>
       <div class="bar-list" id="bars-mecanica"></div>
     </div>
@@ -222,15 +222,15 @@
     </div>
     <div class="chart-card">
       <div class="chart-title">Status por consultor</div>
-      <div class="chart-sub">DistribuiÃÂ§ÃÂ£o dos status em cada agenda</div>
+      <div class="chart-sub">Distribuição dos status em cada agenda</div>
       <div style="position:relative;height:180px"><canvas id="chart-status-person"></canvas></div>
     </div>
   </div>
 
-  <div class="section-title">EvoluÃÂ§ÃÂ£o semanal</div>
+  <div class="section-title">Evolução semanal</div>
   <div class="charts-trend">
     <div class="chart-card">
-      <div class="chart-title">SessÃÂµes realizadas vs canceladas por semana</div>
+      <div class="chart-title">Sessões realizadas vs canceladas por semana</div>
       <div style="position:relative;height:220px"><canvas id="chart-trend"></canvas></div>
     </div>
     <div class="chart-card">
@@ -239,21 +239,21 @@
     </div>
   </div>
 
-  <div class="section-title">SessÃÂµes realizadas esta semana</div>
+  <div class="section-title">Sessões realizadas esta semana</div>
   <div class="table-card">
     <table>
       <thead>
         <tr>
           <th>Dia</th><th>Consultor</th><th>Dentista (cliente)</th>
           <th>Status do tratamento</th><th>Complexidade</th>
-          <th>MecÃÂ¢nica</th><th>Suporte anterior</th><th>Agenda</th><th>Por onde</th>
+          <th>Mecânica</th><th>Suporte anterior</th><th>Agenda</th><th>Por onde</th>
         </tr>
       </thead>
       <tbody id="sessions-body"></tbody>
     </table>
   </div>
 
-  <div class="section-title">HistÃÂ³rico de comparecimento</div>
+  <div class="section-title">Histórico de comparecimento</div>
   <div class="table-card">
     <table>
       <thead>
@@ -281,21 +281,21 @@
   <div class="section-title">Resumo geral</div>
   <div class="cards-4" id="mensal-summary-cards"></div>
 
-  <div class="section-title">EvoluÃÂ§ÃÂ£o mensal</div>
+  <div class="section-title">Evolução mensal</div>
   <div class="charts-2col">
     <div class="chart-card">
-      <div class="chart-title">SessÃÂµes realizadas por mÃÂªs</div>
-      <div class="chart-sub">Acumulado histÃÂ³rico</div>
+      <div class="chart-title">Sessões realizadas por mês</div>
+      <div class="chart-sub">Acumulado histórico</div>
       <div style="position:relative;height:240px"><canvas id="chart-mensal-bar"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Taxa de comparecimento por mÃÂªs</div>
+      <div class="chart-title">Taxa de comparecimento por mês</div>
       <div class="chart-sub">Realizadas / (Realizadas + Canceladas)</div>
       <div style="position:relative;height:240px"><canvas id="chart-mensal-rate"></canvas></div>
     </div>
   </div>
 
-  <div class="section-title">Por mÃÂªs</div>
+  <div class="section-title">Por mês</div>
   <div id="mensal-month-cards" class="month-cards-list"></div>
 
 </div>
@@ -305,7 +305,7 @@
 <div id="tab-detalhes" class="tab-content">
 <div class="filter-bar">
   <div style="display:flex;align-items:center;gap:8px">
-    <span class="filter-label">MÃÂªs</span>
+    <span class="filter-label">Mês</span>
     <select id="detalhes-mes-filter" onchange="renderDetalhes()" style="padding:5px 10px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:12px;color:#374151;background:#fff;cursor:pointer"></select>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -322,14 +322,14 @@
   <div class="section-title">Resumo filtrado</div>
   <div class="cards-3" id="detalhes-summary-cards"></div>
 
-  <div class="section-title">DistribuiÃÂ§ÃÂ£o das sessÃÂµes</div>
+  <div class="section-title">Distribuição das sessões</div>
   <div class="charts-4col">
     <div class="chart-card">
       <div class="chart-title">Complexidade</div>
       <div style="position:relative;height:160px"><canvas id="chart-d-complexidade"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">MecÃÂ¢nica auxiliar</div>
+      <div class="chart-title">Mecânica auxiliar</div>
       <div style="position:relative;height:160px"><canvas id="chart-d-mecanica"></canvas></div>
     </div>
     <div class="chart-card">
@@ -342,13 +342,13 @@
     </div>
   </div>
 
-  <div class="section-title">Tabela completa de sessÃÂµes</div>
+  <div class="section-title">Tabela completa de sessões</div>
   <div class="table-card">
     <table>
       <thead>
         <tr>
-          <th>MÃÂªs</th><th>Dia</th><th>Consultor</th><th>Dentista (cliente)</th>
-          <th>Status</th><th>Complexidade</th><th>MecÃÂ¢nica</th><th>Suporte</th><th>Agenda</th><th>Por onde</th>
+          <th>Mês</th><th>Dia</th><th>Consultor</th><th>Dentista (cliente)</th>
+          <th>Status</th><th>Complexidade</th><th>Mecânica</th><th>Suporte</th><th>Agenda</th><th>Por onde</th>
         </tr>
       </thead>
       <tbody id="detalhes-body"></tbody>
@@ -360,7 +360,7 @@
 
 <script>
 // ============================================================
-// DATA Ã¢ÂÂ substituÃÂ­do automaticamente pelo agendamento diÃÂ¡rio
+// DATA — substituído automaticamente pelo agendamento diário
 // ============================================================
 const DATA = {
   generatedAt: "2026-06-16T17:36:51.000Z",
@@ -452,7 +452,7 @@ let detalhesConsultorFilter = '';
 const _charts = {};
 
 // ---- HELPERS ----
-function pct(a, b) { return b === 0 ? 'Ã¢ÂÂ' : Math.round((a / b) * 100) + '%'; }
+function pct(a, b) { return b === 0 ? '—' : Math.round((a / b) * 100) + '%'; }
 function badgeClass(rate) { return rate >= 85 ? 'high' : rate >= 60 ? 'mid' : 'low'; }
 function rateColor(r) { return r >= 85 ? '#10b981' : r >= 60 ? '#f59e0b' : '#ef4444'; }
 function count(arr, field, val) { return arr.filter(a => a[field] === val).length; }
@@ -485,9 +485,9 @@ function mesLabel(mes) {
 
 function statusBadge(s) {
   if (s === 'Planejamento Novo')       return `<span class="badge blue">${s}</span>`;
-  if (s === 'Aprovado, nÃÂ£o iniciado')  return `<span class="badge amber">${s}</span>`;
+  if (s === 'Aprovado, não iniciado')  return `<span class="badge amber">${s}</span>`;
   if (s === 'Em tratamento')           return `<span class="badge green">${s}</span>`;
-  return `<span class="badge gray">${s || 'Ã¢ÂÂ'}</span>`;
+  return `<span class="badge gray">${s || '—'}</span>`;
 }
 function complexBadge(c) {
   return c === 'Simples'
@@ -498,16 +498,16 @@ function boolBadge(v) {
   const val = (v||'').toLowerCase();
   if (val.includes('sim'))   return `<span class="badge" style="background:#0f346015;color:#0f3460">Sim</span>`;
   if (val.includes('quero')) return `<span class="badge" style="background:#e9456015;color:#e94560">Quer add.</span>`;
-  return `<span class="badge gray">NÃÂ£o</span>`;
+  return `<span class="badge gray">Não</span>`;
 }
 function boolBadgeGreen(v) {
   const val = (v||'').toLowerCase();
   if (val.includes('sim')) return `<span class="badge" style="background:#05996915;color:#059669">Sim</span>`;
-  return `<span class="badge gray">NÃÂ£o</span>`;
+  return `<span class="badge gray">Não</span>`;
 }
 function porondeTag(p) {
-  if (!p || p === 'Ã¢ÂÂ' || p === 'blank') return `<span style="color:#cbd5e1">Ã¢ÂÂ</span>`;
-  const col = p === 'ReuniÃÂ£o' ? '#8b5cf6' : '#3b82f6';
+  if (!p || p === '—' || p === 'blank') return `<span style="color:#cbd5e1">—</span>`;
+  const col = p === 'Reunião' ? '#8b5cf6' : '#3b82f6';
   return `<span class="badge" style="background:${col}18;color:${col}">${p}</span>`;
 }
 
@@ -524,7 +524,7 @@ function currentWeekAppts() {
   const fmt = d => d.toISOString().split('T')[0];
   const minD = fmt(seg), maxD = fmt(sex);
   return DATA.appointments.filter(a => {
-    if (!a.data) return true; // sem campo data Ã¢ÂÂ assume semana atual
+    if (!a.data) return true; // sem campo data → assume semana atual
     return a.data >= minD && a.data <= maxD;
   });
 }
@@ -570,19 +570,19 @@ function renderSemanal() {
     const r = t > 0 ? Math.round(w.realized/t*100) : 100;
     const appts = currentWeekAppts().filter(a => a.prof === person.name.split(' ')[0]);
     const sNovo  = count(appts, 'status', 'Planejamento Novo');
-    const sAprov = count(appts, 'status', 'Aprovado, nÃÂ£o iniciado');
+    const sAprov = count(appts, 'status', 'Aprovado, não iniciado');
     const sTrat  = count(appts, 'status', 'Em tratamento');
-    const ag     = appts.length > 0 ? appts[0].agenda : 'Ã¢ÂÂ';
+    const ag     = appts.length > 0 ? appts[0].agenda : '—';
     document.getElementById('card-' + id).innerHTML = `
       <div class="person-header">
         <div class="avatar ${person.cls}">${person.initials}</div>
-        <div><div class="person-name">${person.name}</div><div class="person-sub">Agenda ${ag} ÃÂ· Consultoria ortodÃÂ´ntica</div></div>
+        <div><div class="person-name">${person.name}</div><div class="person-sub">Agenda ${ag} · Consultoria ortodôntica</div></div>
       </div>
-      <div class="metric-row"><span class="metric-label">SessÃÂµes realizadas</span><span class="metric-value" style="color:#059669">${w.realized}</span></div>
+      <div class="metric-row"><span class="metric-label">Sessões realizadas</span><span class="metric-value" style="color:#059669">${w.realized}</span></div>
       <div class="metric-row"><span class="metric-label">Cancelamentos</span><span class="metric-value" style="color:#d97706">${w.canceled}</span></div>
       <div class="metric-row"><span class="metric-label">No-shows</span><span class="metric-value" style="color:#dc2626">${w.noshow}</span></div>
       ${sNovo  > 0 ? `<div class="metric-row"><span class="metric-label">Planejamento Novo</span><span class="metric-value" style="color:#3b82f6">${sNovo}</span></div>` : ''}
-      ${sAprov > 0 ? `<div class="metric-row"><span class="metric-label">Aprovado, nÃÂ£o iniciado</span><span class="metric-value" style="color:#f59e0b">${sAprov}</span></div>` : ''}
+      ${sAprov > 0 ? `<div class="metric-row"><span class="metric-label">Aprovado, não iniciado</span><span class="metric-value" style="color:#f59e0b">${sAprov}</span></div>` : ''}
       ${sTrat  > 0 ? `<div class="metric-row"><span class="metric-label">Em tratamento</span><span class="metric-value" style="color:#10b981">${sTrat}</span></div>` : ''}
       <div class="rate-bar"><div class="rate-fill" style="width:${r}%;background:${rateColor(r)}"></div></div>
       <div class="rate-label">${r}% de comparecimento</div>`;
@@ -592,52 +592,52 @@ function renderSemanal() {
   const wa = currentWeekAppts();
   const t2 = wa.length;
   const novo  = count(wa, 'status', 'Planejamento Novo');
-  const aprov = count(wa, 'status', 'Aprovado, nÃÂ£o iniciado');
+  const aprov = count(wa, 'status', 'Aprovado, não iniciado');
   const trat  = count(wa, 'status', 'Em tratamento');
   document.getElementById('status-grid').innerHTML = `
     <div class="status-item novo">
       <div class="s-label">Planejamento Novo</div>
       <div class="s-value">${novo}</div>
-      <div class="s-sub">${t2>0?Math.round(novo/t2*100):0}% das sessÃÂµes</div>
+      <div class="s-sub">${t2>0?Math.round(novo/t2*100):0}% das sessões</div>
     </div>
     <div class="status-item aprovado">
-      <div class="s-label">Aprovado, nÃÂ£o iniciado</div>
+      <div class="s-label">Aprovado, não iniciado</div>
       <div class="s-value">${aprov}</div>
-      <div class="s-sub">${t2>0?Math.round(aprov/t2*100):0}% das sessÃÂµes</div>
+      <div class="s-sub">${t2>0?Math.round(aprov/t2*100):0}% das sessões</div>
     </div>
     <div class="status-item tratamento">
       <div class="s-label">Em tratamento</div>
       <div class="s-value">${trat}</div>
-      <div class="s-sub">${t2>0?Math.round(trat/t2*100):0}% das sessÃÂµes</div>
+      <div class="s-sub">${t2>0?Math.round(trat/t2*100):0}% das sessões</div>
     </div>`;
 
   // Payload bars
   const appts = wa;
   const tot = appts.length;
-  document.getElementById('sub-complexidade').textContent = tot + ' sessÃÂµes realizadas';
+  document.getElementById('sub-complexidade').textContent = tot + ' sessões realizadas';
   buildBars('bars-complexidade', [
     { label:'Simples',  n:count(appts,'complexidade','Simples'),  color:'#10b981' },
     { label:'Complexo', n:count(appts,'complexidade','Complexo'), color:'#f59e0b' },
   ], tot);
-  const mNao  = count(appts,'mecanica','NÃÂ£o');
+  const mNao  = count(appts,'mecanica','Não');
   const mSim  = count(appts,'mecanica','Sim');
   const mQuer = appts.filter(a=>(a.mecanica||'').includes('quero')).length;
   buildBars('bars-mecanica', [
-    { label:'NÃÂ£o',                  n:mNao,  color:'#64748b' },
+    { label:'Não',                  n:mNao,  color:'#64748b' },
     { label:'Sim',                  n:mSim,  color:'#0f3460' },
-    { label:'NÃÂ£o, mas quer add.',   n:mQuer, color:'#e94560' },
+    { label:'Não, mas quer add.',   n:mQuer, color:'#e94560' },
   ], tot);
   buildBars('bars-suporte', [
-    { label:'NÃÂ£o', n:count(appts,'suporte','NÃÂ£o'), color:'#94a3b8' },
+    { label:'Não', n:count(appts,'suporte','Não'), color:'#94a3b8' },
     { label:'Sim', n:count(appts,'suporte','Sim'), color:'#059669' },
   ], tot);
-  const pReun  = count(appts,'poronde','ReuniÃÂ£o');
+  const pReun  = count(appts,'poronde','Reunião');
   const pAtend = count(appts,'poronde','Atendimento');
-  const pNao   = appts.filter(a=>!a.poronde||a.poronde==='Ã¢ÂÂ'||a.poronde==='blank').length;
+  const pNao   = appts.filter(a=>!a.poronde||a.poronde==='—'||a.poronde==='blank').length;
   buildBars('bars-poronde', [
-    { label:'NÃÂ£o informado', n:pNao,  color:'#e2e8f0' },
+    { label:'Não informado', n:pNao,  color:'#e2e8f0' },
     { label:'Atendimento',   n:pAtend,color:'#3b82f6' },
-    { label:'ReuniÃÂ£o',       n:pReun, color:'#8b5cf6' },
+    { label:'Reunião',       n:pReun, color:'#8b5cf6' },
   ], tot);
 
   // Chart: status por consultor
@@ -649,8 +649,8 @@ function renderSemanal() {
     data:{
       labels:['Planej. Novo','Aprovado','Em tratamento'],
       datasets:[
-        { label:'Gustavo', data:[count(gA,'status','Planejamento Novo'),count(gA,'status','Aprovado, nÃÂ£o iniciado'),count(gA,'status','Em tratamento')], backgroundColor:'#0f3460' },
-        { label:'Laura',   data:[count(lA,'status','Planejamento Novo'),count(lA,'status','Aprovado, nÃÂ£o iniciado'),count(lA,'status','Em tratamento')], backgroundColor:'#059669' },
+        { label:'Gustavo', data:[count(gA,'status','Planejamento Novo'),count(gA,'status','Aprovado, não iniciado'),count(gA,'status','Em tratamento')], backgroundColor:'#0f3460' },
+        { label:'Laura',   data:[count(lA,'status','Planejamento Novo'),count(lA,'status','Aprovado, não iniciado'),count(lA,'status','Em tratamento')], backgroundColor:'#059669' },
       ]
     },
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10}}}, scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{beginAtZero:true,grid:{color:'#f1f5f9'},ticks:{stepSize:1}}} }
@@ -663,10 +663,10 @@ function renderSemanal() {
     data:{
       labels: DATA.people.gustavo.weeks.map(w=>w.label),
       datasets:[
-        { label:'Gustavo ÃÂ· Realizadas', data:DATA.people.gustavo.weeks.map(w=>w.realized), backgroundColor:'#0f3460', stack:'g' },
-        { label:'Gustavo ÃÂ· Canceladas', data:DATA.people.gustavo.weeks.map(w=>w.canceled), backgroundColor:'rgba(15,52,96,.25)', stack:'g' },
-        { label:'Laura ÃÂ· Realizadas',   data:DATA.people.laura.weeks.map(w=>w.realized),   backgroundColor:'#059669', stack:'l' },
-        { label:'Laura ÃÂ· Canceladas',   data:DATA.people.laura.weeks.map(w=>w.canceled),   backgroundColor:'rgba(5,150,105,.25)', stack:'l' },
+        { label:'Gustavo · Realizadas', data:DATA.people.gustavo.weeks.map(w=>w.realized), backgroundColor:'#0f3460', stack:'g' },
+        { label:'Gustavo · Canceladas', data:DATA.people.gustavo.weeks.map(w=>w.canceled), backgroundColor:'rgba(15,52,96,.25)', stack:'g' },
+        { label:'Laura · Realizadas',   data:DATA.people.laura.weeks.map(w=>w.realized),   backgroundColor:'#059669', stack:'l' },
+        { label:'Laura · Canceladas',   data:DATA.people.laura.weeks.map(w=>w.canceled),   backgroundColor:'rgba(5,150,105,.25)', stack:'l' },
       ]
     },
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,grid:{color:'#f1f5f9'}}} }
@@ -706,7 +706,7 @@ function renderSemanal() {
         <td>${w.label}</td>
         <td><span class="dot ${id==='gustavo'?'g':'l'}"></span>${person.name}</td>
         <td>${w.realized}</td><td>${w.canceled}</td><td>${w.noshow}</td>
-        <td>${r2!==null?`<span class="badge ${badgeClass(r2)}">${r2}%</span>`:'<span style="color:#94a3b8">Ã¢ÂÂ</span>'}</td>
+        <td>${r2!==null?`<span class="badge ${badgeClass(r2)}">${r2}%</span>`:'<span style="color:#94a3b8">—</span>'}</td>
       </tr>`);
     }
   }
@@ -735,24 +735,24 @@ function renderMensal() {
   const totTotal    = totRealized + totCanceled;
   const avgRate     = totTotal > 0 ? Math.round(totRealized/totTotal*100) : 100;
   document.getElementById('mensal-summary-cards').innerHTML = `
-    <div class="card"><div class="label">Total realizado (histÃÂ³rico)</div><div class="value">${totRealized}</div><div class="sub">sessÃÂµes confirmadas</div></div>
+    <div class="card"><div class="label">Total realizado (histórico)</div><div class="value">${totRealized}</div><div class="sub">sessões confirmadas</div></div>
     <div class="card orange"><div class="label">Total cancelado</div><div class="value">${totCanceled}</div><div class="sub">cancelamentos</div></div>
-    <div class="card green"><div class="label">Taxa mÃÂ©dia de comparecimento</div><div class="value">${avgRate}%</div><div class="sub">histÃÂ³rico geral</div></div>
-    <div class="card"><div class="label">Meses com dados</div><div class="value">${months.filter(m=>monthly[m].realized+monthly[m].canceled>0).length}</div><div class="sub">perÃÂ­odos registrados</div></div>`;
+    <div class="card green"><div class="label">Taxa média de comparecimento</div><div class="value">${avgRate}%</div><div class="sub">histórico geral</div></div>
+    <div class="card"><div class="label">Meses com dados</div><div class="value">${months.filter(m=>monthly[m].realized+monthly[m].canceled>0).length}</div><div class="sub">períodos registrados</div></div>`;
 
   // Bar chart: sessions per month
   destroyChart('chart-mensal-bar');
   const datasets = pf ? [
-    { label: DATA.people[pf].name + ' ÃÂ· Realizadas', data: months.map(m=>monthly[m].realized), backgroundColor: pf==='gustavo'?'#0f3460':'#059669' },
-    { label: DATA.people[pf].name + ' ÃÂ· Canceladas', data: months.map(m=>monthly[m].canceled), backgroundColor: pf==='gustavo'?'rgba(15,52,96,.25)':'rgba(5,150,105,.25)' },
+    { label: DATA.people[pf].name + ' · Realizadas', data: months.map(m=>monthly[m].realized), backgroundColor: pf==='gustavo'?'#0f3460':'#059669' },
+    { label: DATA.people[pf].name + ' · Canceladas', data: months.map(m=>monthly[m].canceled), backgroundColor: pf==='gustavo'?'rgba(15,52,96,.25)':'rgba(5,150,105,.25)' },
   ] : (() => {
     const gM = getMonthlyByWeeks('gustavo');
     const lM = getMonthlyByWeeks('laura');
     return [
-      { label:'Gustavo ÃÂ· Realizadas', data:months.map(m=>(gM[m]||{}).realized||0), backgroundColor:'#0f3460', stack:'g' },
-      { label:'Gustavo ÃÂ· Canceladas', data:months.map(m=>(gM[m]||{}).canceled||0), backgroundColor:'rgba(15,52,96,.25)', stack:'g' },
-      { label:'Laura ÃÂ· Realizadas',   data:months.map(m=>(lM[m]||{}).realized||0), backgroundColor:'#059669', stack:'l' },
-      { label:'Laura ÃÂ· Canceladas',   data:months.map(m=>(lM[m]||{}).canceled||0), backgroundColor:'rgba(5,150,105,.25)', stack:'l' },
+      { label:'Gustavo · Realizadas', data:months.map(m=>(gM[m]||{}).realized||0), backgroundColor:'#0f3460', stack:'g' },
+      { label:'Gustavo · Canceladas', data:months.map(m=>(gM[m]||{}).canceled||0), backgroundColor:'rgba(15,52,96,.25)', stack:'g' },
+      { label:'Laura · Realizadas',   data:months.map(m=>(lM[m]||{}).realized||0), backgroundColor:'#059669', stack:'l' },
+      { label:'Laura · Canceladas',   data:months.map(m=>(lM[m]||{}).canceled||0), backgroundColor:'rgba(5,150,105,.25)', stack:'l' },
     ];
   })();
   new Chart(document.getElementById('chart-mensal-bar'), {
@@ -835,12 +835,12 @@ function renderDetalhes() {
 
   // Summary cards
   const novo  = count(appts,'status','Planejamento Novo');
-  const aprov = count(appts,'status','Aprovado, nÃÂ£o iniciado');
+  const aprov = count(appts,'status','Aprovado, não iniciado');
   const trat  = count(appts,'status','Em tratamento');
   document.getElementById('detalhes-summary-cards').innerHTML = `
-    <div class="card"><div class="label">SessÃÂµes encontradas</div><div class="value">${tot}</div><div class="sub">${mesFilter?mesLabel(mesFilter):'todos os meses'}</div></div>
-    <div class="card"><div class="label">Planejamento Novo</div><div class="value" style="color:#3b82f6">${novo}</div><div class="sub">${tot>0?Math.round(novo/tot*100):0}% das sessÃÂµes</div></div>
-    <div class="card"><div class="label">Em tratamento</div><div class="value" style="color:#10b981">${trat}</div><div class="sub">${tot>0?Math.round(trat/tot*100):0}% das sessÃÂµes</div></div>`;
+    <div class="card"><div class="label">Sessões encontradas</div><div class="value">${tot}</div><div class="sub">${mesFilter?mesLabel(mesFilter):'todos os meses'}</div></div>
+    <div class="card"><div class="label">Planejamento Novo</div><div class="value" style="color:#3b82f6">${novo}</div><div class="sub">${tot>0?Math.round(novo/tot*100):0}% das sessões</div></div>
+    <div class="card"><div class="label">Em tratamento</div><div class="value" style="color:#10b981">${trat}</div><div class="sub">${tot>0?Math.round(trat/tot*100):0}% das sessões</div></div>`;
 
   // Mini donut charts
   function miniDonut(id, labels, data, colors) {
@@ -852,21 +852,21 @@ function renderDetalhes() {
       options:{ responsive:true, maintainAspectRatio:false, cutout:'55%', plugins:{legend:{position:'bottom',labels:{font:{size:9},boxWidth:8,padding:4}}} }
     });
   }
-  const mNao  = count(appts,'mecanica','NÃÂ£o');
+  const mNao  = count(appts,'mecanica','Não');
   const mSim  = count(appts,'mecanica','Sim');
   const mQuer = appts.filter(a=>(a.mecanica||'').includes('quero')).length;
-  const pReun = count(appts,'poronde','ReuniÃÂ£o');
+  const pReun = count(appts,'poronde','Reunião');
   const pAten = count(appts,'poronde','Atendimento');
-  const pNao  = appts.filter(a=>!a.poronde||a.poronde==='Ã¢ÂÂ'||a.poronde==='blank').length;
+  const pNao  = appts.filter(a=>!a.poronde||a.poronde==='—'||a.poronde==='blank').length;
 
   miniDonut('chart-d-complexidade',['Simples','Complexo'],[count(appts,'complexidade','Simples'),count(appts,'complexidade','Complexo')],['#10b981','#f59e0b']);
-  miniDonut('chart-d-mecanica',['NÃÂ£o','Sim','Quer add.'],[mNao,mSim,mQuer],['#94a3b8','#0f3460','#e94560']);
-  miniDonut('chart-d-suporte',['NÃÂ£o','Sim'],[count(appts,'suporte','NÃÂ£o'),count(appts,'suporte','Sim')],['#94a3b8','#059669']);
-  miniDonut('chart-d-poronde',['N/A','Atendimento','ReuniÃÂ£o'],[pNao,pAten,pReun],['#e2e8f0','#3b82f6','#8b5cf6']);
+  miniDonut('chart-d-mecanica',['Não','Sim','Quer add.'],[mNao,mSim,mQuer],['#94a3b8','#0f3460','#e94560']);
+  miniDonut('chart-d-suporte',['Não','Sim'],[count(appts,'suporte','Não'),count(appts,'suporte','Sim')],['#94a3b8','#059669']);
+  miniDonut('chart-d-poronde',['N/A','Atendimento','Reunião'],[pNao,pAten,pReun],['#e2e8f0','#3b82f6','#8b5cf6']);
 
   // Full table
   document.getElementById('detalhes-body').innerHTML = appts.length === 0
-    ? `<tr><td colspan="10" style="text-align:center;color:#94a3b8;padding:24px">Nenhuma sessÃÂ£o encontrada com os filtros selecionados.</td></tr>`
+    ? `<tr><td colspan="10" style="text-align:center;color:#94a3b8;padding:24px">Nenhuma sessão encontrada com os filtros selecionados.</td></tr>`
     : appts.map(a => `<tr>
         <td style="font-size:11px;color:#64748b;white-space:nowrap">${mesLabel(a.mes||'2026-06')}</td>
         <td style="white-space:nowrap;color:#64748b;font-size:11px">${a.dia}</td>
@@ -901,7 +901,7 @@ function showTab(name) {
 const d = new Date(DATA.generatedAt);
 document.getElementById('updated-at').textContent =
   'Atualizado em ' + d.toLocaleDateString('pt-BR', {weekday:'long',day:'numeric',month:'long'}) +
-  ' ÃÂ s ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
+  ' às ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
 
 renderSemanal();
 </script>
