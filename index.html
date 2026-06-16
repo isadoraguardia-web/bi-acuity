@@ -363,15 +363,18 @@
 // DATA — substituído automaticamente pelo agendamento diário
 // ============================================================
 const DATA = {
-  generatedAt: "2026-06-12T19:00:00",
+  generatedAt: "2026-06-16T12:23:36.055041",
   people: {
     gustavo: {
       name: "Gustavo Bernardes", initials: "GB", cls: "gustavo",
       weeks: [
         { label:"19–23/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
         { label:"26–30/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
+        { label:"01/06–05/06", mes:"2026-06", realized:2, canceled:3, noshow:0 },
         { label:"01–05/jun", mes:"2026-06", realized:2, canceled:3, noshow:0 },
-        { label:"08–12/jun", mes:"2026-06", realized:14, canceled:5, noshow:0 }
+        { label:"08/06–12/06", mes:"2026-06", realized:14, canceled:5, noshow:0 },
+        { label:"08–12/jun", mes:"2026-06", realized:14, canceled:5, noshow:0 },
+        { label:"15/06–19/06", mes:"2026-06", realized:6, canceled:0, noshow:0 }
       ]
     },
     laura: {
@@ -379,29 +382,48 @@ const DATA = {
       weeks: [
         { label:"19–23/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
         { label:"26–30/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
+        { label:"01/06–05/06", mes:"2026-06", realized:1, canceled:0, noshow:0 },
         { label:"01–05/jun", mes:"2026-06", realized:1, canceled:0, noshow:0 },
-        { label:"08–12/jun", mes:"2026-06", realized:3, canceled:0, noshow:0 }
+        { label:"08/06–12/06", mes:"2026-06", realized:3, canceled:0, noshow:0 },
+        { label:"08–12/jun", mes:"2026-06", realized:3, canceled:0, noshow:0 },
+        { label:"15/06–19/06", mes:"2026-06", realized:7, canceled:1, noshow:0 }
       ]
     }
   },
   appointments: [
-    { data:"2026-06-08", mes:"2026-06", dia:"Seg 08/jun", prof:"Laura",   cliente:"Rodrigo Brito Leite Bisneto",          status:"Em tratamento",         mecanica:"Sim",                     suporte:"Sim", complexidade:"Simples",  agenda:"A", poronde:"Reunião"    },
-    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Gustavo", cliente:"Patricia Christine Pinto",             status:"Planejamento Novo",     mecanica:"Não, mas quero adicionar", suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Reunião"    },
-    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Gustavo", cliente:"Ediana Possebon Pradebon",             status:"Aprovado, não iniciado",mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
-    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Gustavo", cliente:"Sandra Borges De Almeida",             status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Simples",  agenda:"B", poronde:"—"          },
-    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Laura",   cliente:"Samy Bechtold Bett",                   status:"Em tratamento",         mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Complexo", agenda:"A", poronde:"—"          },
-    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Laura",   cliente:"Karen Chaves De Lima Reis",            status:"Em tratamento",         mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"A", poronde:"Reunião"    },
-    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/jun", prof:"Gustavo", cliente:"Tatiane Ferreira Soares",              status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
-    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/jun", prof:"Gustavo", cliente:"André Brandão Mansano",                status:"Aprovado, não iniciado",mecanica:"Sim",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
-    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/jun", prof:"Gustavo", cliente:"Daniela Maria Da Cruz Abreu Abrantes", status:"Aprovado, não iniciado",mecanica:"Sim",                     suporte:"Sim", complexidade:"Complexo", agenda:"B", poronde:"Reunião"    },
-    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Patricia Christine Pinto",             status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
-    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Daniel Silveira Urbano",               status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
-    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Sandra Borges De Almeida",             status:"Planejamento Novo",     mecanica:"Sim",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
-    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Silvana Rita Pereira Da Rosa",         status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
-    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Talita Casarim Pinheiro",              status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
-    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Daniele Coelho Crepaldi",              status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Simples",  agenda:"B", poronde:"—"          },
-    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Juliana Barboza Coutinho Amaral",      status:"Planejamento Novo",     mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Simples",  agenda:"B", poronde:"—"          },
-    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Larissa Bachião",                      status:"Aprovado, não iniciado",mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
+    { data:"2026-06-03", mes:"2026-06", dia:"Qua 03/06", prof:"Laura", cliente:"Teste da Silva", status:"", mecanica:"", suporte:"", complexidade:"", agenda:"", poronde:"Reunião" },
+    { data:"2026-06-05", mes:"2026-06", dia:"Sex 05/06", prof:"Gustavo", cliente:"Jorge Luis Zorzella", status:"Aprovado, não iniciado", mecanica:"Não", suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—" },
+    { data:"2026-06-05", mes:"2026-06", dia:"Sex 05/06", prof:"Gustavo", cliente:"Renato Medeiros Lattari", status:"Planejamento Novo", mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-08", mes:"2026-06", dia:"Seg 08/06", prof:"Laura", cliente:"Rodrigo Brito Leite Bisneto", status:"Em tratamento", mecanica:"Sim", suporte:"Sim", complexidade:"Simples", agenda:"A", poronde:"Reunião" },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/06", prof:"Gustavo", cliente:"Ediana Possebon Pradebon", status:"Aprovado, não iniciado", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/06", prof:"Gustavo", cliente:"Patricia Christine Pinto", status:"Planejamento Novo", mecanica:"Não, mas quero adicionar", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Reunião" },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/06", prof:"Gustavo", cliente:"Sandra Borges De Almeida", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/06", prof:"Laura", cliente:"Karen Chaves De Lima Reis", status:"Em tratamento", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"A", poronde:"Reunião" },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/06", prof:"Laura", cliente:"Samy Bechtold Bett", status:"Em tratamento", mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Complexo", agenda:"A", poronde:"—" },
+    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/06", prof:"Gustavo", cliente:"André Brandão Mansano", status:"Aprovado, não iniciado", mecanica:"Sim", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/06", prof:"Gustavo", cliente:"Daniela Maria Da Cruz Abreu Abrantes", status:"Aprovado, não iniciado", mecanica:"Sim", suporte:"Sim", complexidade:"Complexo", agenda:"B", poronde:"Reunião" },
+    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/06", prof:"Gustavo", cliente:"Tatiane Ferreira Soares", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—" },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/06", prof:"Gustavo", cliente:"Daniel Silveira Urbano", status:"Planejamento Novo", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/06", prof:"Gustavo", cliente:"Patricia Christine Pinto", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—" },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/06", prof:"Gustavo", cliente:"Sandra Borges De Almeida", status:"Planejamento Novo", mecanica:"Sim", suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—" },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/06", prof:"Gustavo", cliente:"Silvana Rita Pereira Da Rosa", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—" },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/06", prof:"Gustavo", cliente:"Daniele Coelho Crepaldi", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/06", prof:"Gustavo", cliente:"Juliana Barboza Coutinho Amaral", status:"Planejamento Novo", mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/06", prof:"Gustavo", cliente:"Larissa Bachião", status:"Aprovado, não iniciado", mecanica:"Não", suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—" },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/06", prof:"Gustavo", cliente:"Talita Casarim Pinheiro", status:"Planejamento Novo", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Gustavo", cliente:"Andrea Augusto Rodrigues", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Gustavo", cliente:"Dener Romário Matheus Martins da Silva", status:"Planejamento Novo", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Reunião" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Gustavo", cliente:"Ivanilda Cordeiro Teramoto", status:"Planejamento Novo", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"B", poronde:"Reunião" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Gustavo", cliente:"Priscila Amaral Braz Rocha", status:"Planejamento Novo", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Laura", cliente:"Ana Paula Fineto", status:"Em tratamento", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"A", poronde:"—" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Laura", cliente:"Izabela Spada Jankowski", status:"Planejamento Novo", mecanica:"Sim", suporte:"Não", complexidade:"Complexo", agenda:"A", poronde:"—" },
+    { data:"2026-06-15", mes:"2026-06", dia:"Seg 15/06", prof:"Laura", cliente:"Jocelia Ines Bottacin", status:"Em tratamento", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"A", poronde:"—" },
+    { data:"2026-06-16", mes:"2026-06", dia:"Ter 16/06", prof:"Gustavo", cliente:"Elke Madalena Ribeiro Marinho Siquiero", status:"Planejamento Novo", mecanica:"Sim", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-16", mes:"2026-06", dia:"Ter 16/06", prof:"Gustavo", cliente:"Natieli Rieth", status:"Aprovado, não iniciado", mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Simples", agenda:"B", poronde:"—" },
+    { data:"2026-06-16", mes:"2026-06", dia:"Ter 16/06", prof:"Laura", cliente:"Daniel Luis Silva Capela Da Silva", status:"Em tratamento", mecanica:"Não", suporte:"Não", complexidade:"Simples", agenda:"A", poronde:"—" },
+    { data:"2026-06-16", mes:"2026-06", dia:"Ter 16/06", prof:"Laura", cliente:"Hamilton Landi", status:"Em tratamento", mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Simples", agenda:"A", poronde:"—" },
+    { data:"2026-06-16", mes:"2026-06", dia:"Ter 16/06", prof:"Laura", cliente:"Raphaela Zamforlim", status:"Planejamento Novo", mecanica:"Sim", suporte:"Sim", complexidade:"Complexo", agenda:"A", poronde:"Reunião" },
+    { data:"2026-06-16", mes:"2026-06", dia:"Ter 16/06", prof:"Laura", cliente:"Thiago Couto Lima", status:"Em tratamento", mecanica:"Não", suporte:"Sim", complexidade:"Simples", agenda:"A", poronde:"Reunião" }
   ]
 };
 // ============================================================
