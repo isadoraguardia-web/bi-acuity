@@ -1,0 +1,39 @@
+name: Atualizar BI Reunioes
+
+on:
+  schedule:
+    - cron: '0 15 * * 1-5'
+    - cron: '0 20 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-bi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Executar script de atualizacao
+        env:
+          ACUITY_USER_ID: ${{ vars.ACUITY_USER_ID }}
+          ACUITY_API_KEY: ${{ vars.ACUITY_API_KEY }}
+        run: python scripts/update_bi.py
+
+      - name: Commit e push do index.html atualizado
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --staged --quiet || git commit -m "BI atualizado -- $(date '+%d/%m/%Y %H:%M UTC')"
+          git push
