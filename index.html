@@ -14,12 +14,30 @@
   .header h1 span { color: #e94560; }
   .updated { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
 
+  /* TABS */
+  .tab-nav { background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; gap: 0; padding: 0 32px; position: sticky; top: 0; z-index: 10; }
+  .tab-btn { padding: 14px 22px; font-size: 13px; font-weight: 600; color: #64748b; background: none; border: none; cursor: pointer; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+  .tab-btn:hover { color: #1a1a2e; }
+  .tab-btn.active { color: #0f3460; border-bottom-color: #e94560; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* FILTERS */
+  .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .filter-label { font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .5px; margin-right: 4px; }
+  .filter-btn { padding: 5px 14px; font-size: 12px; font-weight: 600; border: 1.5px solid #e2e8f0; border-radius: 20px; background: #fff; color: #64748b; cursor: pointer; transition: all .15s; }
+  .filter-btn:hover { border-color: #94a3b8; color: #1a1a2e; }
+  .filter-btn.active { background: #0f3460; color: #fff; border-color: #0f3460; }
+  .filter-btn.active.laura { background: #059669; border-color: #059669; }
+  .filter-bar { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 12px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
   .container { max-width: 1280px; margin: 0 auto; padding: 28px 24px; }
   .section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 14px; margin-top: 32px; }
   .section-title:first-child { margin-top: 0; }
 
-  /* SUMMARY CARDS */
+  /* CARDS */
   .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
   .card .label { font-size: 11px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
   .card .value { font-size: 32px; font-weight: 800; margin: 6px 0 4px; color: #1a1a2e; }
@@ -52,17 +70,19 @@
   .charts-trend { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
   .charts-payload { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
   .charts-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .charts-2col-tall { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .charts-4col { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
 
-  /* HORIZONTAL BAR LIST */
+  /* BARS */
   .bar-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
   .bar-item { display: flex; flex-direction: column; gap: 4px; }
   .bar-item-header { display: flex; justify-content: space-between; font-size: 12px; }
   .bar-item-label { color: #374151; font-weight: 500; }
   .bar-item-count { color: #64748b; font-weight: 600; }
   .bar-track { height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden; }
-  .bar-fill { height: 100%; border-radius: 4px; transition: width .5s ease; }
+  .bar-fill { height: 100%; border-radius: 4px; }
 
-  /* STATUS HIGHLIGHTS */
+  /* STATUS */
   .status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .status-item { background: #f8fafc; border-radius: 10px; padding: 16px; text-align: center; border-left: 4px solid transparent; }
   .status-item.novo { border-color: #3b82f6; }
@@ -94,14 +114,24 @@
   .dot.g { background: #0f3460; }
   .dot.l { background: #059669; }
 
+  /* MONTHLY SUMMARY ROW */
+  .month-summary-card { background: #fff; border-radius: 12px; padding: 18px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.06); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .month-summary-card .ms-month { font-size: 15px; font-weight: 700; color: #1a1a2e; min-width: 90px; }
+  .month-summary-card .ms-item { text-align: center; }
+  .month-summary-card .ms-val { font-size: 22px; font-weight: 800; }
+  .month-summary-card .ms-lbl { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: .4px; }
+  .month-cards-list { display: flex; flex-direction: column; gap: 12px; }
+
   @media (max-width: 900px) {
-    .cards-4, .charts-payload { grid-template-columns: repeat(2, 1fr); }
+    .cards-4, .charts-payload, .charts-4col { grid-template-columns: repeat(2, 1fr); }
     .persons, .charts-trend, .charts-2col { grid-template-columns: 1fr; }
-    .status-grid { grid-template-columns: repeat(3, 1fr); }
+    .status-grid, .cards-3 { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 600px) {
-    .cards-4, .status-grid { grid-template-columns: repeat(2, 1fr); }
-    .charts-payload { grid-template-columns: 1fr; }
+    .cards-4, .status-grid, .cards-3 { grid-template-columns: repeat(2, 1fr); }
+    .charts-payload, .charts-4col { grid-template-columns: 1fr; }
+    .tab-nav { padding: 0 12px; }
+    .tab-btn { padding: 12px 14px; font-size: 12px; }
   }
 </style>
 </head>
@@ -118,9 +148,16 @@
   </div>
 </div>
 
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="semanal" onclick="showTab('semanal')">Esta Semana</button>
+  <button class="tab-btn" data-tab="mensal" onclick="showTab('mensal')">Mensal</button>
+  <button class="tab-btn" data-tab="detalhes" onclick="showTab('detalhes')">Detalhes</button>
+</div>
+
+<!-- =================== ABA: ESTA SEMANA =================== -->
+<div id="tab-semanal" class="tab-content active">
 <div class="container">
 
-  <!-- SUMMARY -->
   <div class="section-title">Semana atual</div>
   <div class="cards-4">
     <div class="card">
@@ -145,14 +182,12 @@
     </div>
   </div>
 
-  <!-- PER PERSON -->
   <div class="section-title">Por consultor · semana atual</div>
   <div class="persons">
     <div class="person-card" id="card-gustavo"></div>
     <div class="person-card" id="card-laura"></div>
   </div>
 
-  <!-- STATUS DO TRATAMENTO -->
   <div class="section-title">Status do tratamento · semana atual</div>
   <div class="chart-card">
     <div class="chart-title">Distribuição por status</div>
@@ -160,12 +195,11 @@
     <div class="status-grid" id="status-grid"></div>
   </div>
 
-  <!-- DIMENSÕES DO PAYLOAD -->
   <div class="section-title">Detalhamento das sessões · semana atual</div>
   <div class="charts-payload">
     <div class="chart-card">
       <div class="chart-title">Complexidade do caso</div>
-      <div class="chart-sub">17 sessões realizadas</div>
+      <div class="chart-sub" id="sub-complexidade">sessões realizadas</div>
       <div class="bar-list" id="bars-complexidade"></div>
     </div>
     <div class="chart-card">
@@ -180,7 +214,6 @@
     </div>
   </div>
 
-  <!-- POR ONDE + STATUS POR CONSULTOR -->
   <div class="charts-2col" style="margin-top:20px">
     <div class="chart-card">
       <div class="chart-title">Por onde o paciente chegou</div>
@@ -194,7 +227,6 @@
     </div>
   </div>
 
-  <!-- EVOLUÇÃO SEMANAL -->
   <div class="section-title">Evolução semanal</div>
   <div class="charts-trend">
     <div class="chart-card">
@@ -207,45 +239,123 @@
     </div>
   </div>
 
-  <!-- SESSÕES DA SEMANA -->
   <div class="section-title">Sessões realizadas esta semana</div>
   <div class="table-card">
     <table>
       <thead>
         <tr>
-          <th>Dia</th>
-          <th>Consultor</th>
-          <th>Dentista (cliente)</th>
-          <th>Status do tratamento</th>
-          <th>Complexidade</th>
-          <th>Mecânica</th>
-          <th>Suporte anterior</th>
-          <th>Agenda</th>
-          <th>Por onde</th>
+          <th>Dia</th><th>Consultor</th><th>Dentista (cliente)</th>
+          <th>Status do tratamento</th><th>Complexidade</th>
+          <th>Mecânica</th><th>Suporte anterior</th><th>Agenda</th><th>Por onde</th>
         </tr>
       </thead>
       <tbody id="sessions-body"></tbody>
     </table>
   </div>
 
-  <!-- HISTÓRICO -->
   <div class="section-title">Histórico de comparecimento</div>
   <div class="table-card">
     <table>
       <thead>
-        <tr>
-          <th>Semana</th>
-          <th>Consultor</th>
-          <th>Realizadas</th>
-          <th>Canceladas</th>
-          <th>No-show</th>
-          <th>Comparecimento</th>
-        </tr>
+        <tr><th>Semana</th><th>Consultor</th><th>Realizadas</th><th>Canceladas</th><th>No-show</th><th>Comparecimento</th></tr>
       </thead>
       <tbody id="table-body"></tbody>
     </table>
   </div>
 
+</div>
+</div>
+
+<!-- =================== ABA: MENSAL =================== -->
+<div id="tab-mensal" class="tab-content">
+<div class="filter-bar">
+  <span class="filter-label">Consultor</span>
+  <div class="filter-row" id="mensal-filters">
+    <button class="filter-btn active" data-val="" onclick="setMensalFilter('')">Todos</button>
+    <button class="filter-btn" data-val="gustavo" onclick="setMensalFilter('gustavo')">Gustavo</button>
+    <button class="filter-btn laura" data-val="laura" onclick="setMensalFilter('laura')">Laura</button>
+  </div>
+</div>
+<div class="container">
+
+  <div class="section-title">Resumo geral</div>
+  <div class="cards-4" id="mensal-summary-cards"></div>
+
+  <div class="section-title">Evolução mensal</div>
+  <div class="charts-2col">
+    <div class="chart-card">
+      <div class="chart-title">Sessões realizadas por mês</div>
+      <div class="chart-sub">Acumulado histórico</div>
+      <div style="position:relative;height:240px"><canvas id="chart-mensal-bar"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Taxa de comparecimento por mês</div>
+      <div class="chart-sub">Realizadas / (Realizadas + Canceladas)</div>
+      <div style="position:relative;height:240px"><canvas id="chart-mensal-rate"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-title">Por mês</div>
+  <div id="mensal-month-cards" class="month-cards-list"></div>
+
+</div>
+</div>
+
+<!-- =================== ABA: DETALHES =================== -->
+<div id="tab-detalhes" class="tab-content">
+<div class="filter-bar">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span class="filter-label">Mês</span>
+    <select id="detalhes-mes-filter" onchange="renderDetalhes()" style="padding:5px 10px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:12px;color:#374151;background:#fff;cursor:pointer"></select>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <span class="filter-label">Consultor</span>
+    <div class="filter-row" id="detalhes-filters">
+      <button class="filter-btn active" data-val="" onclick="setDetalhesFilter('')">Todos</button>
+      <button class="filter-btn" data-val="Gustavo" onclick="setDetalhesFilter('Gustavo')">Gustavo</button>
+      <button class="filter-btn laura" data-val="Laura" onclick="setDetalhesFilter('Laura')">Laura</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+  <div class="section-title">Resumo filtrado</div>
+  <div class="cards-3" id="detalhes-summary-cards"></div>
+
+  <div class="section-title">Distribuição das sessões</div>
+  <div class="charts-4col">
+    <div class="chart-card">
+      <div class="chart-title">Complexidade</div>
+      <div style="position:relative;height:160px"><canvas id="chart-d-complexidade"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Mecânica auxiliar</div>
+      <div style="position:relative;height:160px"><canvas id="chart-d-mecanica"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Suporte anterior</div>
+      <div style="position:relative;height:160px"><canvas id="chart-d-suporte"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Por onde chegou</div>
+      <div style="position:relative;height:160px"><canvas id="chart-d-poronde"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-title">Tabela completa de sessões</div>
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Mês</th><th>Dia</th><th>Consultor</th><th>Dentista (cliente)</th>
+          <th>Status</th><th>Complexidade</th><th>Mecânica</th><th>Suporte</th><th>Agenda</th><th>Por onde</th>
+        </tr>
+      </thead>
+      <tbody id="detalhes-body"></tbody>
+    </table>
+  </div>
+
+</div>
 </div>
 
 <script>
@@ -253,357 +363,507 @@
 // DATA — substituído automaticamente pelo agendamento diário
 // ============================================================
 const DATA = {
-  generatedAt: "2026-06-16T14:17:30.293Z",
+  generatedAt: "2026-06-12T19:00:00",
   people: {
     gustavo: {
-      name: "Gustavo Bernardes",
-      initials: "GB",
-      cls: "gustavo",
+      name: "Gustavo Bernardes", initials: "GB", cls: "gustavo",
       weeks: [
-        { label: "18/05–22/05", realized: 0, canceled: 0, noshow: 0 },
-        { label: "25/05–29/05", realized: 0, canceled: 0, noshow: 0 },
-        { label: "01/06–05/06", realized: 2, canceled: 0, noshow: 0 },
-        { label: "08/06–12/06", realized: 14, canceled: 0, noshow: 0 },
-        { label: "15/06–19/06", realized: 8, canceled: 0, noshow: 0 }
+        { label:"19–23/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
+        { label:"26–30/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
+        { label:"01–05/jun", mes:"2026-06", realized:2, canceled:3, noshow:0 },
+        { label:"08–12/jun", mes:"2026-06", realized:14, canceled:5, noshow:0 }
       ]
     },
     laura: {
-      name: "Laura Raposo",
-      initials: "LR",
-      cls: "laura",
+      name: "Laura Raposo", initials: "LR", cls: "laura",
       weeks: [
-        { label: "18/05–22/05", realized: 0, canceled: 0, noshow: 0 },
-        { label: "25/05–29/05", realized: 0, canceled: 0, noshow: 0 },
-        { label: "01/06–05/06", realized: 1, canceled: 0, noshow: 0 },
-        { label: "08/06–12/06", realized: 3, canceled: 0, noshow: 0 },
-        { label: "15/06–19/06", realized: 14, canceled: 0, noshow: 0 }
+        { label:"19–23/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
+        { label:"26–30/mai", mes:"2026-05", realized:0, canceled:0, noshow:0 },
+        { label:"01–05/jun", mes:"2026-06", realized:1, canceled:0, noshow:0 },
+        { label:"08–12/jun", mes:"2026-06", realized:3, canceled:0, noshow:0 }
       ]
     }
   },
   appointments: [
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Qua 17/06", cliente: "Maria Rosália Morari Dias", status: "Planejamento Novo", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "B", paciente: "Adenilson Da Cunha", poronde: "—" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Qua 17/06", cliente: "Luciano Mendes Gonçalves", status: "Planejamento Novo", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "B", paciente: "Vitor De Carvalho Cerqueira Pinto", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Qua 17/06", cliente: "Daniela Cavalcante De Andrade Nascimento", status: "Em tratamento", mecanica: "Não", suporte: "Sim", complexidade: "Simples", agenda: "A", paciente: "Maria Clara Guedes De Andrade", poronde: "Reunião" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Qua 17/06", cliente: "Amanda Carvalho Cangussu Gama", status: "Em tratamento", mecanica: "Sim", suporte: "Sim", complexidade: "Complexo", agenda: "A", paciente: "Thais Caroline Borges Da Silva", poronde: "Reunião" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Qua 17/06", cliente: "Márcia Veiga Murici", status: "Em tratamento", mecanica: "Sim", suporte: "Sim", complexidade: "Complexo", agenda: "A", paciente: "Beatriz Ribeiro Santos", poronde: "Ambos" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Qua 17/06", cliente: "Breno Estevam Silva De Souza", status: "Em tratamento", mecanica: "Não", suporte: "Não", complexidade: "Complexo", agenda: "A", paciente: "Silvia Claudino Martins Gomes", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Qui 18/06", cliente: "Juliana Cristina Mauricio", status: "Aprovado, não iniciado", mecanica: "Sim", suporte: "Não", complexidade: "Complexo", agenda: "A", paciente: "Débora Jordanna Da Costa Solner", poronde: "—" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Dener Romário Matheus Martins da Silva", status: "Planejamento Novo", mecanica: "Não", suporte: "Sim", complexidade: "Simples", agenda: "B", paciente: "Andreza De Melo Franzão", poronde: "Reunião" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Andrea Augusto Rodrigues", status: "Planejamento Novo", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "B", paciente: "Claudia Mara Pinheiro Da Silva Faria", poronde: "—" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Ivanilda Cordeiro Teramoto", status: "Planejamento Novo", mecanica: "Não", suporte: "Sim", complexidade: "Simples", agenda: "B", paciente: "Jane Silva F. Magalhaes", poronde: "Reunião" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Priscila Amaral Braz Rocha", status: "Planejamento Novo", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "B", paciente: "Gabriela Silva Rosa", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Jocelia Ines Bottacin", status: "Em tratamento", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "A", paciente: "Marlen Glória Lima Da Costa", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Izabela Spada Jankowski", status: "Planejamento Novo", mecanica: "Sim", suporte: "Não", complexidade: "Complexo", agenda: "A", paciente: "Rubens Bonifacio De Souza", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Seg 15/06", cliente: "Ana Paula Fineto", status: "Em tratamento", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "A", paciente: "Matheus Brito Silva", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Sex 19/06", cliente: "Viviane Do Prado Ancona", status: "Em tratamento", mecanica: "Sim", suporte: "Sim", complexidade: "Complexo", agenda: "A", paciente: "Joao Miguel Moreno Ferreira Lima", poronde: "Ambos" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Sex 19/06", cliente: "Marcelo Oliveira Venerando", status: "Em tratamento", mecanica: "Não, mas quero adicionar", suporte: "Sim", complexidade: "Complexo", agenda: "A", paciente: "Wellingtom Firmino Dos Santos", poronde: "Reunião" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Ter 16/06", cliente: "Elke Madalena Ribeiro Marinho Siquiero", status: "Planejamento Novo", mecanica: "Sim", suporte: "Não", complexidade: "Simples", agenda: "B", paciente: "Maria Venância Neve Da Silva Lessa", poronde: "—" },
-    { prof: "Gustavo", tipo: "Consultoria ortodôntica", dia: "Ter 16/06", cliente: "Natieli Rieth", status: "Aprovado, não iniciado", mecanica: "Não, mas quero adicionar", suporte: "Não", complexidade: "Simples", agenda: "B", paciente: "Natieli Rieth", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Ter 16/06", cliente: "Thiago Couto Lima", status: "Em tratamento", mecanica: "Não", suporte: "Sim", complexidade: "Simples", agenda: "A", paciente: "Luriane Sversut Arsioli", poronde: "Reunião" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Ter 16/06", cliente: "Daniel Luis Silva Capela Da Silva", status: "Em tratamento", mecanica: "Não", suporte: "Não", complexidade: "Simples", agenda: "A", paciente: "João Paulo Pereira Da Silva", poronde: "—" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Ter 16/06", cliente: "Raphaela Zamforlim", status: "Planejamento Novo", mecanica: "Sim", suporte: "Sim", complexidade: "Complexo", agenda: "A", paciente: "Emanuelly P S França", poronde: "Reunião" },
-    { prof: "Laura", tipo: "Consultoria ortodôntica", dia: "Ter 16/06", cliente: "Hamilton Landi", status: "Em tratamento", mecanica: "Não, mas quero adicionar", suporte: "Não", complexidade: "Simples", agenda: "A", paciente: "Rogério Marques", poronde: "—" }
+    { data:"2026-06-08", mes:"2026-06", dia:"Seg 08/jun", prof:"Laura",   cliente:"Rodrigo Brito Leite Bisneto",          status:"Em tratamento",         mecanica:"Sim",                     suporte:"Sim", complexidade:"Simples",  agenda:"A", poronde:"Reunião"    },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Gustavo", cliente:"Patricia Christine Pinto",             status:"Planejamento Novo",     mecanica:"Não, mas quero adicionar", suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Reunião"    },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Gustavo", cliente:"Ediana Possebon Pradebon",             status:"Aprovado, não iniciado",mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Gustavo", cliente:"Sandra Borges De Almeida",             status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Simples",  agenda:"B", poronde:"—"          },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Laura",   cliente:"Samy Bechtold Bett",                   status:"Em tratamento",         mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Complexo", agenda:"A", poronde:"—"          },
+    { data:"2026-06-09", mes:"2026-06", dia:"Ter 09/jun", prof:"Laura",   cliente:"Karen Chaves De Lima Reis",            status:"Em tratamento",         mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"A", poronde:"Reunião"    },
+    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/jun", prof:"Gustavo", cliente:"Tatiane Ferreira Soares",              status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
+    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/jun", prof:"Gustavo", cliente:"André Brandão Mansano",                status:"Aprovado, não iniciado",mecanica:"Sim",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-10", mes:"2026-06", dia:"Qua 10/jun", prof:"Gustavo", cliente:"Daniela Maria Da Cruz Abreu Abrantes", status:"Aprovado, não iniciado",mecanica:"Sim",                     suporte:"Sim", complexidade:"Complexo", agenda:"B", poronde:"Reunião"    },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Patricia Christine Pinto",             status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Daniel Silveira Urbano",               status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Sandra Borges De Almeida",             status:"Planejamento Novo",     mecanica:"Sim",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
+    { data:"2026-06-11", mes:"2026-06", dia:"Qui 11/jun", prof:"Gustavo", cliente:"Silvana Rita Pereira Da Rosa",         status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Talita Casarim Pinheiro",              status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Sim", complexidade:"Simples",  agenda:"B", poronde:"Atendimento" },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Daniele Coelho Crepaldi",              status:"Planejamento Novo",     mecanica:"Não",                     suporte:"Não", complexidade:"Simples",  agenda:"B", poronde:"—"          },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Juliana Barboza Coutinho Amaral",      status:"Planejamento Novo",     mecanica:"Não, mas quero adicionar", suporte:"Não", complexidade:"Simples",  agenda:"B", poronde:"—"          },
+    { data:"2026-06-12", mes:"2026-06", dia:"Sex 12/jun", prof:"Gustavo", cliente:"Larissa Bachião",                      status:"Aprovado, não iniciado",mecanica:"Não",                     suporte:"Não", complexidade:"Complexo", agenda:"B", poronde:"—"          },
   ]
 };
 // ============================================================
+
+// ---- GLOBAL STATE ----
+let mensalConsultorFilter = '';
+let detalhesConsultorFilter = '';
+const _charts = {};
 
 // ---- HELPERS ----
 function pct(a, b) { return b === 0 ? '—' : Math.round((a / b) * 100) + '%'; }
 function badgeClass(rate) { return rate >= 85 ? 'high' : rate >= 60 ? 'mid' : 'low'; }
 function rateColor(r) { return r >= 85 ? '#10b981' : r >= 60 ? '#f59e0b' : '#ef4444'; }
-
 function count(arr, field, val) { return arr.filter(a => a[field] === val).length; }
-function countContains(arr, field, str) { return arr.filter(a => (a[field]||'').includes(str)).length; }
 
-function buildBars(containerId, items, total, palette) {
-  const el = document.getElementById(containerId);
-  el.innerHTML = items.map(({label, n, color}) => `
-    <div class="bar-item">
-      <div class="bar-item-header">
-        <span class="bar-item-label">${label}</span>
-        <span class="bar-item-count">${n} <span style="color:#cbd5e1">(${Math.round(n/total*100)}%)</span></span>
-      </div>
-      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(n/total*100)}%;background:${color}"></div></div>
-    </div>
-  `).join('');
+function destroyChart(id) {
+  const c = Chart.getChart(id);
+  if (c) c.destroy();
 }
 
-// ---- RENDER SUMMARY ----
-function renderSummary() {
+function buildBars(containerId, items, total) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = items.map(({label, n, color}) => {
+    const pctVal = total > 0 ? Math.round(n / total * 100) : 0;
+    return `<div class="bar-item">
+      <div class="bar-item-header">
+        <span class="bar-item-label">${label}</span>
+        <span class="bar-item-count">${n} <span style="color:#cbd5e1">(${pctVal}%)</span></span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pctVal}%;background:${color}"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function mesLabel(mes) {
+  const [y, m] = mes.split('-');
+  const names = ['','Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  return names[parseInt(m)] + '/' + y.slice(2);
+}
+
+function statusBadge(s) {
+  if (s === 'Planejamento Novo')       return `<span class="badge blue">${s}</span>`;
+  if (s === 'Aprovado, não iniciado')  return `<span class="badge amber">${s}</span>`;
+  if (s === 'Em tratamento')           return `<span class="badge green">${s}</span>`;
+  return `<span class="badge gray">${s || '—'}</span>`;
+}
+function complexBadge(c) {
+  return c === 'Simples'
+    ? `<span class="badge" style="background:#dcfce7;color:#065f46">Simples</span>`
+    : `<span class="badge" style="background:#fef3c7;color:#92400e">Complexo</span>`;
+}
+function boolBadge(v) {
+  const val = (v||'').toLowerCase();
+  if (val.includes('sim'))   return `<span class="badge" style="background:#0f346015;color:#0f3460">Sim</span>`;
+  if (val.includes('quero')) return `<span class="badge" style="background:#e9456015;color:#e94560">Quer add.</span>`;
+  return `<span class="badge gray">Não</span>`;
+}
+function boolBadgeGreen(v) {
+  const val = (v||'').toLowerCase();
+  if (val.includes('sim')) return `<span class="badge" style="background:#05996915;color:#059669">Sim</span>`;
+  return `<span class="badge gray">Não</span>`;
+}
+function porondeTag(p) {
+  if (!p || p === '—' || p === 'blank') return `<span style="color:#cbd5e1">—</span>`;
+  const col = p === 'Reunião' ? '#8b5cf6' : '#3b82f6';
+  return `<span class="badge" style="background:${col}18;color:${col}">${p}</span>`;
+}
+
+// Returns last week's data for each person
+function lastWeek(person) { return person.weeks[person.weeks.length - 1]; }
+
+// Returns appointments for the current week (based on generatedAt)
+function currentWeekAppts() {
+  const gen = new Date(DATA.generatedAt);
+  const dow = gen.getDay();
+  const seg = new Date(gen);
+  seg.setDate(gen.getDate() - (dow === 0 ? 6 : dow - 1));
+  const sex = new Date(seg); sex.setDate(seg.getDate() + 4);
+  const fmt = d => d.toISOString().split('T')[0];
+  const minD = fmt(seg), maxD = fmt(sex);
+  return DATA.appointments.filter(a => {
+    if (!a.data) return true; // sem campo data → assume semana atual
+    return a.data >= minD && a.data <= maxD;
+  });
+}
+
+// Monthly aggregation from people.weeks (includes canceled)
+function getMonthlyByWeeks(personFilter) {
+  const result = {};
+  for (const [key, person] of Object.entries(DATA.people)) {
+    if (personFilter && key !== personFilter) continue;
+    for (const w of person.weeks) {
+      const m = w.mes || '2026-06';
+      if (!result[m]) result[m] = { realized: 0, canceled: 0, noshow: 0 };
+      result[m].realized += w.realized;
+      result[m].canceled += w.canceled;
+      result[m].noshow   += w.noshow;
+    }
+  }
+  return result;
+}
+
+// ============================================================
+// ABA: ESTA SEMANA
+// ============================================================
+function renderSemanal() {
   const people = Object.values(DATA.people);
-  const last = p => p.weeks[p.weeks.length - 1];
-  const realized = people.reduce((s,p) => s + last(p).realized, 0);
-  const canceled = people.reduce((s,p) => s + last(p).canceled, 0);
-  const noshow   = people.reduce((s,p) => s + last(p).noshow,   0);
+  const realized = people.reduce((s,p) => s + lastWeek(p).realized, 0);
+  const canceled = people.reduce((s,p) => s + lastWeek(p).canceled, 0);
+  const noshow   = people.reduce((s,p) => s + lastWeek(p).noshow,   0);
   const total    = realized + canceled;
   const rate     = total > 0 ? Math.round(realized/total*100) : 100;
-  document.getElementById('total-realized').textContent = realized;
-  document.getElementById('total-canceled').textContent = canceled;
-  document.getElementById('total-noshow').textContent   = noshow;
+
+  document.getElementById('total-realized').textContent  = realized;
+  document.getElementById('total-canceled').textContent  = canceled;
+  document.getElementById('total-noshow').textContent    = noshow;
   document.getElementById('attendance-rate').textContent = rate + '%';
   document.getElementById('attendance-pct').textContent  = pct(realized, total) + ' de comparecimento';
   document.getElementById('cancel-pct').textContent      = pct(canceled, total) + ' de cancelamento';
-}
 
-// ---- RENDER PERSON CARDS ----
-function renderPersonCard(id, person) {
-  const w = person.weeks[person.weeks.length - 1];
-  const total = w.realized + w.canceled;
-  const rate  = total > 0 ? Math.round((w.realized / total) * 100) : 100;
-  const appts = DATA.appointments.filter(a => a.prof === person.name.split(' ')[0]);
-  // status breakdown for this person
-  const sNovo     = count(appts, 'status', 'Planejamento Novo');
-  const sAprov    = count(appts, 'status', 'Aprovado, não iniciado');
-  const sTrat     = count(appts, 'status', 'Em tratamento');
-  const agenda    = appts.length > 0 ? appts[0].agenda : '—';
-
-  document.getElementById('card-' + id).innerHTML = `
-    <div class="person-header">
-      <div class="avatar ${person.cls}">${person.initials}</div>
-      <div>
-        <div class="person-name">${person.name}</div>
-        <div class="person-sub">Agenda ${agenda} · Consultoria ortodôntica</div>
+  // Person cards
+  for (const [id, person] of Object.entries(DATA.people)) {
+    const w = lastWeek(person);
+    const t = w.realized + w.canceled;
+    const r = t > 0 ? Math.round(w.realized/t*100) : 100;
+    const appts = currentWeekAppts().filter(a => a.prof === person.name.split(' ')[0]);
+    const sNovo  = count(appts, 'status', 'Planejamento Novo');
+    const sAprov = count(appts, 'status', 'Aprovado, não iniciado');
+    const sTrat  = count(appts, 'status', 'Em tratamento');
+    const ag     = appts.length > 0 ? appts[0].agenda : '—';
+    document.getElementById('card-' + id).innerHTML = `
+      <div class="person-header">
+        <div class="avatar ${person.cls}">${person.initials}</div>
+        <div><div class="person-name">${person.name}</div><div class="person-sub">Agenda ${ag} · Consultoria ortodôntica</div></div>
       </div>
-    </div>
-    <div class="metric-row"><span class="metric-label">Sessões realizadas</span><span class="metric-value" style="color:#059669">${w.realized}</span></div>
-    <div class="metric-row"><span class="metric-label">Cancelamentos</span><span class="metric-value" style="color:#d97706">${w.canceled}</span></div>
-    <div class="metric-row"><span class="metric-label">No-shows</span><span class="metric-value" style="color:#dc2626">${w.noshow}</span></div>
-    ${sNovo > 0 ? `<div class="metric-row"><span class="metric-label">Planejamento Novo</span><span class="metric-value" style="color:#3b82f6">${sNovo}</span></div>` : ''}
-    ${sAprov > 0 ? `<div class="metric-row"><span class="metric-label">Aprovado, não iniciado</span><span class="metric-value" style="color:#f59e0b">${sAprov}</span></div>` : ''}
-    ${sTrat > 0  ? `<div class="metric-row"><span class="metric-label">Em tratamento</span><span class="metric-value" style="color:#10b981">${sTrat}</span></div>` : ''}
-    <div class="rate-bar"><div class="rate-fill" style="width:${rate}%;background:${rateColor(rate)}"></div></div>
-    <div class="rate-label">${rate}% de comparecimento</div>
-  `;
-}
+      <div class="metric-row"><span class="metric-label">Sessões realizadas</span><span class="metric-value" style="color:#059669">${w.realized}</span></div>
+      <div class="metric-row"><span class="metric-label">Cancelamentos</span><span class="metric-value" style="color:#d97706">${w.canceled}</span></div>
+      <div class="metric-row"><span class="metric-label">No-shows</span><span class="metric-value" style="color:#dc2626">${w.noshow}</span></div>
+      ${sNovo  > 0 ? `<div class="metric-row"><span class="metric-label">Planejamento Novo</span><span class="metric-value" style="color:#3b82f6">${sNovo}</span></div>` : ''}
+      ${sAprov > 0 ? `<div class="metric-row"><span class="metric-label">Aprovado, não iniciado</span><span class="metric-value" style="color:#f59e0b">${sAprov}</span></div>` : ''}
+      ${sTrat  > 0 ? `<div class="metric-row"><span class="metric-label">Em tratamento</span><span class="metric-value" style="color:#10b981">${sTrat}</span></div>` : ''}
+      <div class="rate-bar"><div class="rate-fill" style="width:${r}%;background:${rateColor(r)}"></div></div>
+      <div class="rate-label">${r}% de comparecimento</div>`;
+  }
 
-// ---- RENDER STATUS GRID ----
-function renderStatusGrid() {
-  const appts = DATA.appointments;
-  const total = appts.length;
-  const novo  = count(appts, 'status', 'Planejamento Novo');
-  const aprov = count(appts, 'status', 'Aprovado, não iniciado');
-  const trat  = count(appts, 'status', 'Em tratamento');
+  // Status grid
+  const wa = currentWeekAppts();
+  const t2 = wa.length;
+  const novo  = count(wa, 'status', 'Planejamento Novo');
+  const aprov = count(wa, 'status', 'Aprovado, não iniciado');
+  const trat  = count(wa, 'status', 'Em tratamento');
   document.getElementById('status-grid').innerHTML = `
     <div class="status-item novo">
       <div class="s-label">Planejamento Novo</div>
       <div class="s-value">${novo}</div>
-      <div class="s-sub">${Math.round(novo/total*100)}% das sessões · Gustavo</div>
+      <div class="s-sub">${t2>0?Math.round(novo/t2*100):0}% das sessões</div>
     </div>
     <div class="status-item aprovado">
       <div class="s-label">Aprovado, não iniciado</div>
       <div class="s-value">${aprov}</div>
-      <div class="s-sub">${Math.round(aprov/total*100)}% das sessões · Gustavo</div>
+      <div class="s-sub">${t2>0?Math.round(aprov/t2*100):0}% das sessões</div>
     </div>
     <div class="status-item tratamento">
       <div class="s-label">Em tratamento</div>
       <div class="s-value">${trat}</div>
-      <div class="s-sub">${Math.round(trat/total*100)}% das sessões · Laura</div>
-    </div>
-  `;
-}
+      <div class="s-sub">${t2>0?Math.round(trat/t2*100):0}% das sessões</div>
+    </div>`;
 
-// ---- RENDER PAYLOAD BARS ----
-function renderPayloadBars() {
-  const appts = DATA.appointments;
-  const total = appts.length;
-
-  // Complexidade
+  // Payload bars
+  const appts = wa;
+  const tot = appts.length;
+  document.getElementById('sub-complexidade').textContent = tot + ' sessões realizadas';
   buildBars('bars-complexidade', [
-    { label: 'Simples',  n: count(appts, 'complexidade', 'Simples'),  color: '#10b981' },
-    { label: 'Complexo', n: count(appts, 'complexidade', 'Complexo'), color: '#f59e0b' },
-  ], total);
-
-  // Mecânica auxiliar — normaliza "Não, mas quero adicionar"
-  const mNao   = count(appts, 'mecanica', 'Não');
-  const mSim   = count(appts, 'mecanica', 'Sim');
-  const mQuer  = appts.filter(a => (a.mecanica||'').includes('quero')).length;
+    { label:'Simples',  n:count(appts,'complexidade','Simples'),  color:'#10b981' },
+    { label:'Complexo', n:count(appts,'complexidade','Complexo'), color:'#f59e0b' },
+  ], tot);
+  const mNao  = count(appts,'mecanica','Não');
+  const mSim  = count(appts,'mecanica','Sim');
+  const mQuer = appts.filter(a=>(a.mecanica||'').includes('quero')).length;
   buildBars('bars-mecanica', [
-    { label: 'Não',              n: mNao,  color: '#64748b' },
-    { label: 'Sim',              n: mSim,  color: '#0f3460' },
-    { label: 'Não, mas quer adicionar', n: mQuer, color: '#e94560' },
-  ], total);
-
-  // Suporte anterior
+    { label:'Não',                  n:mNao,  color:'#64748b' },
+    { label:'Sim',                  n:mSim,  color:'#0f3460' },
+    { label:'Não, mas quer add.',   n:mQuer, color:'#e94560' },
+  ], tot);
   buildBars('bars-suporte', [
-    { label: 'Não', n: count(appts, 'suporte', 'Não'), color: '#94a3b8' },
-    { label: 'Sim', n: count(appts, 'suporte', 'Sim'), color: '#059669' },
-  ], total);
-
-  // Por onde
-  const pReuniao    = count(appts, 'poronde', 'Reunião');
-  const pAtend      = count(appts, 'poronde', 'Atendimento');
-  const pNaoInf     = appts.filter(a => !a.poronde || a.poronde === '—' || a.poronde === 'blank').length;
+    { label:'Não', n:count(appts,'suporte','Não'), color:'#94a3b8' },
+    { label:'Sim', n:count(appts,'suporte','Sim'), color:'#059669' },
+  ], tot);
+  const pReun  = count(appts,'poronde','Reunião');
+  const pAtend = count(appts,'poronde','Atendimento');
+  const pNao   = appts.filter(a=>!a.poronde||a.poronde==='—'||a.poronde==='blank').length;
   buildBars('bars-poronde', [
-    { label: 'Não informado', n: pNaoInf,  color: '#e2e8f0' },
-    { label: 'Atendimento',   n: pAtend,   color: '#3b82f6' },
-    { label: 'Reunião',       n: pReuniao, color: '#8b5cf6' },
-  ], total);
-}
+    { label:'Não informado', n:pNao,  color:'#e2e8f0' },
+    { label:'Atendimento',   n:pAtend,color:'#3b82f6' },
+    { label:'Reunião',       n:pReun, color:'#8b5cf6' },
+  ], tot);
 
-// ---- STATUS POR CONSULTOR ----
-function renderStatusPersonChart() {
-  const gAppts = DATA.appointments.filter(a => a.prof === 'Gustavo');
-  const lAppts = DATA.appointments.filter(a => a.prof === 'Laura');
+  // Chart: status por consultor
+  destroyChart('chart-status-person');
+  const gA = appts.filter(a=>a.prof==='Gustavo');
+  const lA = appts.filter(a=>a.prof==='Laura');
   new Chart(document.getElementById('chart-status-person'), {
-    type: 'bar',
-    data: {
-      labels: ['Planejamento Novo', 'Aprovado, não iniciado', 'Em tratamento'],
-      datasets: [
-        {
-          label: 'Gustavo',
-          data: [
-            count(gAppts, 'status', 'Planejamento Novo'),
-            count(gAppts, 'status', 'Aprovado, não iniciado'),
-            count(gAppts, 'status', 'Em tratamento'),
-          ],
-          backgroundColor: '#0f3460',
-        },
-        {
-          label: 'Laura',
-          data: [
-            count(lAppts, 'status', 'Planejamento Novo'),
-            count(lAppts, 'status', 'Aprovado, não iniciado'),
-            count(lAppts, 'status', 'Em tratamento'),
-          ],
-          backgroundColor: '#059669',
-        }
+    type:'bar',
+    data:{
+      labels:['Planej. Novo','Aprovado','Em tratamento'],
+      datasets:[
+        { label:'Gustavo', data:[count(gA,'status','Planejamento Novo'),count(gA,'status','Aprovado, não iniciado'),count(gA,'status','Em tratamento')], backgroundColor:'#0f3460' },
+        { label:'Laura',   data:[count(lA,'status','Planejamento Novo'),count(lA,'status','Aprovado, não iniciado'),count(lA,'status','Em tratamento')], backgroundColor:'#059669' },
       ]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10 } } },
-      scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 9 } } },
-        y: { beginAtZero: true, grid: { color: '#f1f5f9' }, ticks: { stepSize: 1 } }
-      }
-    }
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10}}}, scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{beginAtZero:true,grid:{color:'#f1f5f9'},ticks:{stepSize:1}}} }
   });
-}
 
-// ---- TREND CHART ----
-function renderTrendChart() {
-  const labels = DATA.people.gustavo.weeks.map(w => w.label);
+  // Trend chart
+  destroyChart('chart-trend');
   new Chart(document.getElementById('chart-trend'), {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [
-        { label: 'Gustavo · Realizadas', data: DATA.people.gustavo.weeks.map(w => w.realized), backgroundColor: '#0f3460', stack: 'g' },
-        { label: 'Gustavo · Canceladas', data: DATA.people.gustavo.weeks.map(w => w.canceled), backgroundColor: 'rgba(15,52,96,.25)', stack: 'g' },
-        { label: 'Laura · Realizadas',   data: DATA.people.laura.weeks.map(w => w.realized),   backgroundColor: '#059669', stack: 'l' },
-        { label: 'Laura · Canceladas',   data: DATA.people.laura.weeks.map(w => w.canceled),   backgroundColor: 'rgba(5,150,105,.25)', stack: 'l' },
+    type:'bar',
+    data:{
+      labels: DATA.people.gustavo.weeks.map(w=>w.label),
+      datasets:[
+        { label:'Gustavo · Realizadas', data:DATA.people.gustavo.weeks.map(w=>w.realized), backgroundColor:'#0f3460', stack:'g' },
+        { label:'Gustavo · Canceladas', data:DATA.people.gustavo.weeks.map(w=>w.canceled), backgroundColor:'rgba(15,52,96,.25)', stack:'g' },
+        { label:'Laura · Realizadas',   data:DATA.people.laura.weeks.map(w=>w.realized),   backgroundColor:'#059669', stack:'l' },
+        { label:'Laura · Canceladas',   data:DATA.people.laura.weeks.map(w=>w.canceled),   backgroundColor:'rgba(5,150,105,.25)', stack:'l' },
       ]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12 } } },
-      scales: { x: { grid: { display: false } }, y: { beginAtZero: true, grid: { color: '#f1f5f9' } } }
-    }
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,grid:{color:'#f1f5f9'}}} }
   });
-}
 
-// ---- DONUT ----
-function renderDonutChart() {
-  const people = Object.values(DATA.people);
-  const last = p => p.weeks[p.weeks.length - 1];
-  const realized = people.reduce((s,p) => s + last(p).realized, 0);
-  const canceled = people.reduce((s,p) => s + last(p).canceled, 0);
-  const noshow   = people.reduce((s,p) => s + last(p).noshow,   0);
+  // Donut
+  destroyChart('chart-donut');
   new Chart(document.getElementById('chart-donut'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Realizadas', 'Canceladas', 'No-show'],
-      datasets: [{ data: [realized, canceled, noshow], backgroundColor: ['#10b981','#f59e0b','#ef4444'], borderWidth: 0 }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false, cutout: '65%',
-      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12 } } }
-    }
+    type:'doughnut',
+    data:{ labels:['Realizadas','Canceladas','No-show'], datasets:[{data:[realized,canceled,noshow], backgroundColor:['#10b981','#f59e0b','#ef4444'], borderWidth:0}] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}} }
   });
-}
 
-// ---- SESSIONS TABLE ----
-function renderSessionsTable() {
-  function statusBadge(s) {
-    if (s === 'Planejamento Novo')       return `<span class="badge blue">${s}</span>`;
-    if (s === 'Aprovado, não iniciado')  return `<span class="badge amber">${s}</span>`;
-    if (s === 'Em tratamento')           return `<span class="badge green">${s}</span>`;
-    return `<span class="badge gray">${s}</span>`;
-  }
-  function complexBadge(c) {
-    return c === 'Simples'
-      ? `<span class="badge" style="background:#dcfce7;color:#065f46">Simples</span>`
-      : `<span class="badge" style="background:#fef3c7;color:#92400e">Complexo</span>`;
-  }
-  function boolBadge(v, trueColor, falseColor) {
-    const val = (v||'').toLowerCase();
-    if (val.includes('sim'))   return `<span class="badge" style="background:${trueColor}15;color:${trueColor};font-size:11px">Sim</span>`;
-    if (val.includes('quero')) return `<span class="badge" style="background:#e94560;color:#fff;font-size:10px">Quer add.</span>`;
-    return `<span class="badge gray">Não</span>`;
-  }
-  function porondeTag(p) {
-    if (!p || p === '—' || p === 'blank') return `<span style="color:#cbd5e1">—</span>`;
-    const col = p === 'Reunião' ? '#8b5cf6' : '#3b82f6';
-    return `<span class="badge" style="background:${col}18;color:${col}">${p}</span>`;
-  }
-  document.getElementById('sessions-body').innerHTML = DATA.appointments.map(a => `
-    <tr>
-      <td style="white-space:nowrap;color:#64748b;font-size:11px">${a.dia}</td>
-      <td><span class="dot ${a.prof === 'Gustavo' ? 'g' : 'l'}"></span>${a.prof}</td>
-      <td style="color:#374151">${a.cliente}</td>
-      <td>${statusBadge(a.status)}</td>
-      <td>${complexBadge(a.complexidade)}</td>
-      <td>${boolBadge(a.mecanica, '#0f3460', '#94a3b8')}</td>
-      <td>${boolBadge(a.suporte,  '#059669', '#94a3b8')}</td>
-      <td style="text-align:center;font-weight:700">${a.agenda}</td>
-      <td>${porondeTag(a.poronde)}</td>
-    </tr>
-  `).join('');
-}
+  // Sessions table (current week)
+  document.getElementById('sessions-body').innerHTML = wa.map(a => `<tr>
+    <td style="white-space:nowrap;color:#64748b;font-size:11px">${a.dia}</td>
+    <td><span class="dot ${a.prof==='Gustavo'?'g':'l'}"></span>${a.prof}</td>
+    <td style="color:#374151">${a.cliente}</td>
+    <td>${statusBadge(a.status)}</td>
+    <td>${complexBadge(a.complexidade)}</td>
+    <td>${boolBadge(a.mecanica)}</td>
+    <td>${boolBadgeGreen(a.suporte)}</td>
+    <td style="text-align:center;font-weight:700">${a.agenda}</td>
+    <td>${porondeTag(a.poronde)}</td>
+  </tr>`).join('');
 
-// ---- HISTORY TABLE ----
-function renderHistoryTable() {
-  const tbody = document.getElementById('table-body');
-  const people = Object.entries(DATA.people);
-  const numWeeks = people[0][1].weeks.length;
+  // History table
+  const entries = Object.entries(DATA.people);
+  const numWeeks = entries[0][1].weeks.length;
   const rows = [];
-  for (let wi = numWeeks - 1; wi >= 0; wi--) {
-    for (const [id, person] of people) {
+  for (let wi = numWeeks-1; wi >= 0; wi--) {
+    for (const [id, person] of entries) {
       const w = person.weeks[wi];
-      const total = w.realized + w.canceled;
-      const rate  = total > 0 ? Math.round((w.realized / total) * 100) : (w.realized > 0 ? 100 : null);
+      const t3 = w.realized + w.canceled;
+      const r2 = t3 > 0 ? Math.round(w.realized/t3*100) : (w.realized>0?100:null);
       rows.push(`<tr>
         <td>${w.label}</td>
-        <td><span class="dot ${id === 'gustavo' ? 'g' : 'l'}"></span>${person.name}</td>
-        <td>${w.realized}</td>
-        <td>${w.canceled}</td>
-        <td>${w.noshow}</td>
-        <td>${rate !== null ? `<span class="badge ${badgeClass(rate)}">${rate}%</span>` : '<span style="color:#94a3b8">—</span>'}</td>
+        <td><span class="dot ${id==='gustavo'?'g':'l'}"></span>${person.name}</td>
+        <td>${w.realized}</td><td>${w.canceled}</td><td>${w.noshow}</td>
+        <td>${r2!==null?`<span class="badge ${badgeClass(r2)}">${r2}%</span>`:'<span style="color:#94a3b8">—</span>'}</td>
       </tr>`);
     }
   }
-  tbody.innerHTML = rows.join('');
+  document.getElementById('table-body').innerHTML = rows.join('');
 }
 
-// ---- INIT ----
-function render() {
-  const d = new Date(DATA.generatedAt);
-  document.getElementById('updated-at').textContent =
-    'Atualizado em ' + d.toLocaleDateString('pt-BR', { weekday:'long', day:'numeric', month:'long' }) +
-    ' às ' + d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
-
-  renderSummary();
-  for (const [id, person] of Object.entries(DATA.people)) renderPersonCard(id, person);
-  renderStatusGrid();
-  renderPayloadBars();
-  renderStatusPersonChart();
-  renderTrendChart();
-  renderDonutChart();
-  renderSessionsTable();
-  renderHistoryTable();
+// ============================================================
+// ABA: MENSAL
+// ============================================================
+function setMensalFilter(val) {
+  mensalConsultorFilter = val;
+  document.querySelectorAll('#mensal-filters .filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.val === val);
+  });
+  renderMensal();
 }
 
-render();
+function renderMensal() {
+  const pf = mensalConsultorFilter; // '' | 'gustavo' | 'laura'
+  const monthly = getMonthlyByWeeks(pf);
+  const months = Object.keys(monthly).sort();
+
+  // Summary cards
+  const totRealized = months.reduce((s,m) => s + monthly[m].realized, 0);
+  const totCanceled = months.reduce((s,m) => s + monthly[m].canceled, 0);
+  const totTotal    = totRealized + totCanceled;
+  const avgRate     = totTotal > 0 ? Math.round(totRealized/totTotal*100) : 100;
+  document.getElementById('mensal-summary-cards').innerHTML = `
+    <div class="card"><div class="label">Total realizado (histórico)</div><div class="value">${totRealized}</div><div class="sub">sessões confirmadas</div></div>
+    <div class="card orange"><div class="label">Total cancelado</div><div class="value">${totCanceled}</div><div class="sub">cancelamentos</div></div>
+    <div class="card green"><div class="label">Taxa média de comparecimento</div><div class="value">${avgRate}%</div><div class="sub">histórico geral</div></div>
+    <div class="card"><div class="label">Meses com dados</div><div class="value">${months.filter(m=>monthly[m].realized+monthly[m].canceled>0).length}</div><div class="sub">períodos registrados</div></div>`;
+
+  // Bar chart: sessions per month
+  destroyChart('chart-mensal-bar');
+  const datasets = pf ? [
+    { label: DATA.people[pf].name + ' · Realizadas', data: months.map(m=>monthly[m].realized), backgroundColor: pf==='gustavo'?'#0f3460':'#059669' },
+    { label: DATA.people[pf].name + ' · Canceladas', data: months.map(m=>monthly[m].canceled), backgroundColor: pf==='gustavo'?'rgba(15,52,96,.25)':'rgba(5,150,105,.25)' },
+  ] : (() => {
+    const gM = getMonthlyByWeeks('gustavo');
+    const lM = getMonthlyByWeeks('laura');
+    return [
+      { label:'Gustavo · Realizadas', data:months.map(m=>(gM[m]||{}).realized||0), backgroundColor:'#0f3460', stack:'g' },
+      { label:'Gustavo · Canceladas', data:months.map(m=>(gM[m]||{}).canceled||0), backgroundColor:'rgba(15,52,96,.25)', stack:'g' },
+      { label:'Laura · Realizadas',   data:months.map(m=>(lM[m]||{}).realized||0), backgroundColor:'#059669', stack:'l' },
+      { label:'Laura · Canceladas',   data:months.map(m=>(lM[m]||{}).canceled||0), backgroundColor:'rgba(5,150,105,.25)', stack:'l' },
+    ];
+  })();
+  new Chart(document.getElementById('chart-mensal-bar'), {
+    type:'bar',
+    data:{ labels:months.map(mesLabel), datasets },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,grid:{color:'#f1f5f9'}}} }
+  });
+
+  // Line chart: rate per month
+  destroyChart('chart-mensal-rate');
+  new Chart(document.getElementById('chart-mensal-rate'), {
+    type:'line',
+    data:{
+      labels:months.map(mesLabel),
+      datasets:[{
+        label:'Taxa de comparecimento (%)',
+        data:months.map(m=>{
+          const {realized,canceled} = monthly[m];
+          const t = realized+canceled;
+          return t > 0 ? Math.round(realized/t*100) : null;
+        }),
+        borderColor:'#e94560', backgroundColor:'rgba(233,69,96,.1)', tension:0.3, fill:true,
+        pointBackgroundColor:'#e94560', pointRadius:5,
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}},
+      scales:{
+        x:{grid:{display:false}},
+        y:{beginAtZero:true,max:100,grid:{color:'#f1f5f9'},ticks:{callback:v=>v+'%'}}
+      }
+    }
+  });
+
+  // Monthly cards
+  document.getElementById('mensal-month-cards').innerHTML = months.filter(m=>monthly[m].realized+monthly[m].canceled>0).reverse().map(m => {
+    const {realized,canceled,noshow} = monthly[m];
+    const t = realized+canceled;
+    const r = t > 0 ? Math.round(realized/t*100) : 100;
+    return `<div class="month-summary-card">
+      <div class="ms-month">${mesLabel(m)}</div>
+      <div class="ms-item"><div class="ms-val" style="color:#059669">${realized}</div><div class="ms-lbl">Realizadas</div></div>
+      <div class="ms-item"><div class="ms-val" style="color:#d97706">${canceled}</div><div class="ms-lbl">Canceladas</div></div>
+      <div class="ms-item"><div class="ms-val" style="color:#dc2626">${noshow}</div><div class="ms-lbl">No-show</div></div>
+      <div class="ms-item"><div class="ms-val" style="color:${rateColor(r)}">${r}%</div><div class="ms-lbl">Comparecimento</div></div>
+      <div style="flex:1;min-width:80px">
+        <div class="rate-bar" style="height:8px"><div class="rate-fill" style="width:${r}%;background:${rateColor(r)}"></div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ============================================================
+// ABA: DETALHES
+// ============================================================
+function setDetalhesFilter(val) {
+  detalhesConsultorFilter = val;
+  document.querySelectorAll('#detalhes-filters .filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.val === val);
+  });
+  renderDetalhes();
+}
+
+function initDetalhesMonthFilter() {
+  const months = [...new Set(DATA.appointments.map(a=>a.mes||'2026-06'))].sort();
+  const sel = document.getElementById('detalhes-mes-filter');
+  sel.innerHTML = '<option value="">Todos os meses</option>' +
+    months.map(m=>`<option value="${m}">${mesLabel(m)}</option>`).join('');
+}
+
+function renderDetalhes() {
+  const mesFilter  = document.getElementById('detalhes-mes-filter').value;
+  const profFilter = detalhesConsultorFilter;
+  let appts = DATA.appointments;
+  if (mesFilter)  appts = appts.filter(a => (a.mes||'2026-06') === mesFilter);
+  if (profFilter) appts = appts.filter(a => a.prof === profFilter);
+
+  const tot = appts.length;
+
+  // Summary cards
+  const novo  = count(appts,'status','Planejamento Novo');
+  const aprov = count(appts,'status','Aprovado, não iniciado');
+  const trat  = count(appts,'status','Em tratamento');
+  document.getElementById('detalhes-summary-cards').innerHTML = `
+    <div class="card"><div class="label">Sessões encontradas</div><div class="value">${tot}</div><div class="sub">${mesFilter?mesLabel(mesFilter):'todos os meses'}</div></div>
+    <div class="card"><div class="label">Planejamento Novo</div><div class="value" style="color:#3b82f6">${novo}</div><div class="sub">${tot>0?Math.round(novo/tot*100):0}% das sessões</div></div>
+    <div class="card"><div class="label">Em tratamento</div><div class="value" style="color:#10b981">${trat}</div><div class="sub">${tot>0?Math.round(trat/tot*100):0}% das sessões</div></div>`;
+
+  // Mini donut charts
+  function miniDonut(id, labels, data, colors) {
+    destroyChart(id);
+    if (tot === 0) return;
+    new Chart(document.getElementById(id), {
+      type:'doughnut',
+      data:{ labels, datasets:[{data, backgroundColor:colors, borderWidth:0}] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'55%', plugins:{legend:{position:'bottom',labels:{font:{size:9},boxWidth:8,padding:4}}} }
+    });
+  }
+  const mNao  = count(appts,'mecanica','Não');
+  const mSim  = count(appts,'mecanica','Sim');
+  const mQuer = appts.filter(a=>(a.mecanica||'').includes('quero')).length;
+  const pReun = count(appts,'poronde','Reunião');
+  const pAten = count(appts,'poronde','Atendimento');
+  const pNao  = appts.filter(a=>!a.poronde||a.poronde==='—'||a.poronde==='blank').length;
+
+  miniDonut('chart-d-complexidade',['Simples','Complexo'],[count(appts,'complexidade','Simples'),count(appts,'complexidade','Complexo')],['#10b981','#f59e0b']);
+  miniDonut('chart-d-mecanica',['Não','Sim','Quer add.'],[mNao,mSim,mQuer],['#94a3b8','#0f3460','#e94560']);
+  miniDonut('chart-d-suporte',['Não','Sim'],[count(appts,'suporte','Não'),count(appts,'suporte','Sim')],['#94a3b8','#059669']);
+  miniDonut('chart-d-poronde',['N/A','Atendimento','Reunião'],[pNao,pAten,pReun],['#e2e8f0','#3b82f6','#8b5cf6']);
+
+  // Full table
+  document.getElementById('detalhes-body').innerHTML = appts.length === 0
+    ? `<tr><td colspan="10" style="text-align:center;color:#94a3b8;padding:24px">Nenhuma sessão encontrada com os filtros selecionados.</td></tr>`
+    : appts.map(a => `<tr>
+        <td style="font-size:11px;color:#64748b;white-space:nowrap">${mesLabel(a.mes||'2026-06')}</td>
+        <td style="white-space:nowrap;color:#64748b;font-size:11px">${a.dia}</td>
+        <td><span class="dot ${a.prof==='Gustavo'?'g':'l'}"></span>${a.prof}</td>
+        <td style="color:#374151">${a.cliente}</td>
+        <td>${statusBadge(a.status)}</td>
+        <td>${complexBadge(a.complexidade)}</td>
+        <td>${boolBadge(a.mecanica)}</td>
+        <td>${boolBadgeGreen(a.suporte)}</td>
+        <td style="text-align:center;font-weight:700">${a.agenda}</td>
+        <td>${porondeTag(a.poronde)}</td>
+      </tr>`).join('');
+}
+
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+const _rendered = {};
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.toggle('active', t.id === 'tab-' + name));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  if (!_rendered[name]) {
+    _rendered[name] = true;
+    if (name === 'mensal')   renderMensal();
+    if (name === 'detalhes') { initDetalhesMonthFilter(); renderDetalhes(); }
+  }
+}
+
+// ============================================================
+// INIT
+// ============================================================
+const d = new Date(DATA.generatedAt);
+document.getElementById('updated-at').textContent =
+  'Atualizado em ' + d.toLocaleDateString('pt-BR', {weekday:'long',day:'numeric',month:'long'}) +
+  ' às ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
+
+renderSemanal();
 </script>
 </body>
 </html>
