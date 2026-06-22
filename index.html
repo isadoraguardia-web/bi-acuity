@@ -355,7 +355,7 @@
 // DATA — substituído automaticamente pelo agendamento diário
 // ============================================================
 const DATA = {
-  generatedAt: "2026-06-19T14:58:54.215398",
+  generatedAt: "2026-06-22T11:50:10.370792",
   people: {
     gustavo: {
       name: "Gustavo Bernardes", initials: "GB", cls: "gustavo",
@@ -364,7 +364,8 @@ const DATA = {
         { label:"25/05-29/05", mes:"2026-05", realized:0, canceled:0, noshow:0 },
         { label:"01/06-05/06", mes:"2026-06", realized:2, canceled:3, noshow:0 },
         { label:"08/06-12/06", mes:"2026-06", realized:13, canceled:5, noshow:1 },
-        { label:"15/06-19/06", mes:"2026-06", realized:11, canceled:4, noshow:3 }
+        { label:"15/06-19/06", mes:"2026-06", realized:11, canceled:4, noshow:3 },
+        { label:"22/06-26/06", mes:"2026-06", realized:11, canceled:0, noshow:0 }
       ]
     },
     laura: {
@@ -374,18 +375,36 @@ const DATA = {
         { label:"25/05-29/05", mes:"2026-05", realized:0, canceled:0, noshow:0 },
         { label:"01/06-05/06", mes:"2026-06", realized:1, canceled:0, noshow:0 },
         { label:"08/06-12/06", mes:"2026-06", realized:3, canceled:0, noshow:0 },
-        { label:"15/06-19/06", mes:"2026-06", realized:16, canceled:1, noshow:2 }
+        { label:"15/06-19/06", mes:"2026-06", realized:15, canceled:1, noshow:3 },
+        { label:"22/06-26/06", mes:"2026-06", realized:5, canceled:0, noshow:1 }
       ]
     }
   },
   appointments: [
+      {data:"2026-06-26",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Sex 26/06",cliente:"Cicely Janice Martinenko Bortolletto",mecanica:"Sim",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"Não",paciente:"Christian Bryan Rohde",poronde:"-",noShow:false},
+      {data:"2026-06-25",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Qui 25/06",cliente:"Hamilton Gomes Filho",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Kailane Batista Dos Santos",poronde:"-",noShow:false},
+      {data:"2026-06-24",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Qua 24/06",cliente:"Andre Luis S. De Toledo",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Ian Pedro Saporetti Parollo",poronde:"-",noShow:false},
+      {data:"2026-06-24",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Qua 24/06",cliente:"Anderson Franco",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Eduardo Gallegos Madeira",poronde:"-",noShow:false},
+      {data:"2026-06-23",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Ter 23/06",cliente:"Amanda Domingos",mecanica:"Não",suporte:"Sim",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Gabriela Gazoni Barbosa",poronde:"Atendimento",noShow:false},
+      {data:"2026-06-23",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Ter 23/06",cliente:"Danielle Barros De Faria",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Vanise Gomes Santos",poronde:"-",noShow:false},
+      {data:"2026-06-23",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Ter 23/06",cliente:"Eduardo Oliveira Gomes",mecanica:"Não",suporte:"Sim",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Leandro Souza Da Silva",poronde:"Reunião",noShow:false},
+      {data:"2026-06-23",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Ter 23/06",cliente:"Ana Cristina De Sousa Fonseca",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Sim",ancoragem:"",paciente:"Ana Cristina De Sousa Fonseca",poronde:"-",noShow:false},
+      {data:"2026-06-23",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Ter 23/06",cliente:"Bruno Fiori Santos",mecanica:"Sim",suporte:"Não",agenda:"A",primeirocaso:"Não",ancoragem:"Sim",paciente:"Vinicius Henrique De Lima",poronde:"-",noShow:false},
+      {data:"2026-06-23",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Ter 23/06",cliente:"Tainara Vitória Santos Pereira",mecanica:"Sim",suporte:"Não",agenda:"A",primeirocaso:"Sim",ancoragem:"Sim",paciente:"Ângela Maria Paim Dos Santos Silva",poronde:"-",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"Ivanilda Cordeiro Teramoto",mecanica:"Não",suporte:"Sim",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Jane Silva F. Magalhaes",poronde:"Reunião",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"Flávia Portilho Cruvinel De Sousa",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Aline Guimarães Gourlart",poronde:"-",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"Geanny Braz Rodrigues",mecanica:"Sim",suporte:"Não",agenda:"B",primeirocaso:"Sim",ancoragem:"Não",paciente:"Robson Costa",poronde:"-",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"Dayane Priscila Domingues",mecanica:"",suporte:"",agenda:"A",primeirocaso:"Não",ancoragem:"",paciente:"Sara Fabiana Reis De Oliveira",poronde:"-",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"Sandra Cutrim Tavares",mecanica:"",suporte:"",agenda:"A",primeirocaso:"Não",ancoragem:"",paciente:"Maria Do Socorro Sobral",poronde:"-",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"ELIZANDRA GUIMAS",mecanica:"Não",suporte:"Não",agenda:"A",primeirocaso:"",ancoragem:"",paciente:"Elke Rodrigues De Carvalho Cardoso",poronde:"-",noShow:false},
+      {data:"2026-06-22",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Seg 22/06",cliente:"Cicely Janice Martinenko Bortolletto",mecanica:"Não",suporte:"Sim",agenda:"A",primeirocaso:"",ancoragem:"",paciente:"Christian Bryan Rohde",poronde:"Atendimento",noShow:true},
       {data:"2026-06-19",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"André Brandão Mansano",mecanica:"Sim",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"Não",paciente:"Leonardo Souza Cerrutti",poronde:"-",noShow:false},
       {data:"2026-06-19",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Carla Cristine Do Santos Ferreira",mecanica:"Não",suporte:"Sim",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Célio Martins Da Matta",poronde:"Ambos",noShow:false},
       {data:"2026-06-19",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Lucas Rafael Santos Souza",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Sofia Nobrega Oliveira Bento",poronde:"-",noShow:true},
       {data:"2026-06-19",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Carolina Vasconcellos Gentil",mecanica:"Sim",suporte:"Sim",agenda:"A",primeirocaso:"",ancoragem:"Sim",paciente:"Geovana Vita Da Veiga",poronde:"Reunião",noShow:false},
       {data:"2026-06-19",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Viviane Do Prado Ancona",mecanica:"Sim",suporte:"Sim",agenda:"A",primeirocaso:"",ancoragem:"Não",paciente:"Joao Miguel Moreno Ferreira Lima",poronde:"Ambos",noShow:false},
-      {data:"2026-06-19",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Amelia Dutra",mecanica:"Não",suporte:"Não",agenda:"A",primeirocaso:"",ancoragem:"",paciente:"Julia Lopes Caldas",poronde:"-",noShow:false},
       {data:"2026-06-19",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Marcelo Oliveira Venerando",mecanica:"Não, mas quero adicionar",suporte:"Sim",agenda:"A",primeirocaso:"",ancoragem:"Não",paciente:"Wellingtom Firmino Dos Santos",poronde:"Reunião",noShow:false},
+      {data:"2026-06-19",mes:"2026-06",prof:"Laura",tipo:"Consultoria ortodôntica",dia:"Sex 19/06",cliente:"Amelia Dutra",mecanica:"Não",suporte:"Não",agenda:"A",primeirocaso:"",ancoragem:"",paciente:"Julia Lopes Caldas",poronde:"-",noShow:true},
       {data:"2026-06-18",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Qui 18/06",cliente:"Flávia Rayanne Pinheiro Vale",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"Não",ancoragem:"",paciente:"Lara Coelho",poronde:"-",noShow:false},
       {data:"2026-06-18",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Qui 18/06",cliente:"Ana Carolina Sarpa Zanetti",mecanica:"Sim",suporte:"Não",agenda:"B",primeirocaso:"",ancoragem:"Não",paciente:"Priscila Besseler",poronde:"-",noShow:false},
       {data:"2026-06-18",mes:"2026-06",prof:"Gustavo",tipo:"Consultoria ortodôntica",dia:"Qui 18/06",cliente:"Marusa Silva Cardoso Prudêncio",mecanica:"Não",suporte:"Não",agenda:"B",primeirocaso:"",ancoragem:"",paciente:"Linda Bohry Lopes De Paula",poronde:"-",noShow:false},
